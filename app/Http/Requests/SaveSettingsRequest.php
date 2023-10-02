@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class SaveSettingsRequest extends FormRequest
+{
+
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, mixed>
+     */
+    public function rules()
+    {
+        return [
+            'organization' => [],
+            'phone1' => [],
+            'phone2' => [],
+            'email' => [],
+            'city' => [],
+            'street' => [],
+            'office' => [],
+            'coordinates'=> [],
+            'work_days' => [],
+            'work_time' => [],
+            'vk' => [],
+            'telegram' => [],
+            'policy'=> [],
+            'cookie'=> [],
+        ];
+    }
+}
+
