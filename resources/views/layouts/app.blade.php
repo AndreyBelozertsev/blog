@@ -28,15 +28,39 @@
 	<header>
 		@include('partials.top-navigation-menu')
 	</header>
-
+	@yield('content')
 	<!-- Site footer -->
-	<footer class="bg-brand py-8">
+	<footer class="mt-24 border-t border-b mb-8">
 		<div class="container">
-			<div class="hidden lg:flex gap-24 pb-8">
+			<div class="grid grid-cols-3 gap-8 ">
+				<div class="border-r py-8">
+					<p class="text-2xl uppercase pb-12">Александр Жук</p>
+					<div class="opacity-50 ff-Montserrat text-xs">
+						<p><a href="#">Политика конфидициальности</a></p>
+						<p>Copyright ©2023</p>
+					</div>
+				</div>
+				<div class="py-8">
+					<p class="uppercase pb-8 font-medium">Магазин</p>
+					<div class="opacity-50">
+						<p class="pb-4"><a href="#">Для детей</a></p>
+						<p class="pb-4"><a href="#">Для всех</a></p>
+					</div>
+				</div>
+				<div class="py-8">
+					<p class="uppercase pb-8 font-medium">Информация</p>
+					<div class="opacity-50">
+						<p class="pb-4"><a href="#">Обо мне</a></p>
+						<p class="pb-4"><a href="#">Как стать моряком</a></p>
+						<p class="pb-4"><a href="#">Как стать блогером</a></p>
+						<p class="pb-4"><a href="#">Telegram - канал</a></p>
+						<p class="pb-4"><a href="#">Магазин</a></p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>
 	@vite(['resources/js/app.js'])
-    @yield('content')
+
 </body>
 </html>
