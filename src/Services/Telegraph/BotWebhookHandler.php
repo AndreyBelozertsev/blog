@@ -14,6 +14,7 @@ use DefStudio\Telegraph\Facades\Telegraph;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use DefStudio\Telegraph\Models\TelegraphBot;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
+use DefStudio\Telegraph\Models\TelegraphChat;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
@@ -47,7 +48,8 @@ class BotWebhookHandler extends WebhookHandler
                 return $keyboard
                     ->button('30 дней')->action('tarif1')
                     ->button('90 дней')->action('tarif2')
-                    ->button('180 дней')->action('tarif3');
+                    ->button('180 дней')->action('tarif3')
+                    ->button('Тест')->action('testHook');
             })->send();
     }
 
@@ -84,6 +86,15 @@ class BotWebhookHandler extends WebhookHandler
                 return $keyboard
                     ->button('Оплатить')->url('https://ya.ru');
             })
+            ->send();
+    }
+
+    public function testHook(): void
+    {
+        $telegraphChat = TelegraphChat::where('chat_id', 1001570080663)->first();
+        $link = $telegraphChat->generatePrimaryInviteLink()->send();
+
+        $this->chat->message($link)
             ->send();
     }
 
