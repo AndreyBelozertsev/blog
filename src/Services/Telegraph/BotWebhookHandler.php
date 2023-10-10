@@ -97,10 +97,7 @@ class BotWebhookHandler extends WebhookHandler
             ->name('September promotional link')    //optional
             ->expire(today()->addMonth())           //optional
             ->memberLimit(1)                       //optional
-            ->withJoinRequest()                     //optional
             ->send();
-        
-
 
         $this->chat->message($link)
             ->send();
