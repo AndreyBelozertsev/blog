@@ -24,7 +24,7 @@ class BotWebhookHandler extends WebhookHandler
 
     public function handle(Request $request, TelegraphBot $bot): void
     {
-        parent::handle();
+        parent::handle($request, $bot);
 
 
         if ($this->request->has('chat_join_request')) {
