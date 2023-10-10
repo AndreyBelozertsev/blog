@@ -21,6 +21,17 @@ use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 
 class BotWebhookHandler extends WebhookHandler
 {
+
+    public function handle(Request $request, TelegraphBot $bot): void
+    {
+        parent::handle();
+
+
+        if ($this->request->has('chat_join_request')) {
+            /* @phpstan-ignore-next-line */
+            Log::info($bot);
+        }
+    }
     
     public function start(): void
     {
@@ -97,7 +108,10 @@ class BotWebhookHandler extends WebhookHandler
             ->name('September promotional link')    //optional
             ->expire(today()->addMonth())           //optional
             ->memberLimit(1)                       //optional
+            ->withJoinRequest()                     //optional
             ->send();
+        
+
 
         $this->chat->message($link)
             ->send();
