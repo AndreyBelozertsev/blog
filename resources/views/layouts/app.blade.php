@@ -30,32 +30,57 @@
 	</header>
 	@yield('content')
 	<!-- Site footer -->
-	<footer class="mt-24 border-t border-b mb-8">
+	<footer class="pt-24 pb-8">
+		<div class="border-t border-b mb-8">
+			<div class="container">
+				<div class="grid grid-cols-5 gap-8">
+					<div class="border-r py-8 col-span-2">
+						<p class="text-2xl uppercase pb-12">Александр Жук</p>
+						<div class="opacity-50 ff-Montserrat text-xs">
+							<p><a href="#">Политика конфидициальности</a></p>
+							<p>Copyright ©2023</p>
+						</div>
+					</div>
+					<div class="py-8">
+						<p class="uppercase pb-8 font-medium">Магазин</p>
+						<div class="opacity-50">
+							<p class="pb-4"><a href="#">Для детей</a></p>
+							<p class="pb-4"><a href="#">Для всех</a></p>
+						</div>
+					</div>
+					<div class="py-8">
+						<p class="uppercase pb-8 font-medium">Информация</p>
+						<div class="opacity-50">
+							<p class="pb-4"><a href="#">Обо мне</a></p>
+							<p class="pb-4"><a href="#">Как стать моряком</a></p>
+							<p class="pb-4"><a href="#">Как стать блогером</a></p>
+							<p class="pb-4"><a href="#">Telegram - канал</a></p>
+							<p class="pb-4"><a href="#">Магазин</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="container">
-			<div class="grid grid-cols-3 gap-8 ">
-				<div class="border-r py-8">
-					<p class="text-2xl uppercase pb-12">Александр Жук</p>
-					<div class="opacity-50 ff-Montserrat text-xs">
-						<p><a href="#">Политика конфидициальности</a></p>
-						<p>Copyright ©2023</p>
+			<div class="grid grid-cols-5 gap-8">
+				<div class="flex flex-col">
+					<div><p class="font-medium pb-8">Соцсети</p></div>
+					<div class="flex gap-5">
+						<a href="#"><img src="{{ asset('template/images/insta.svg') }}" alt=""></a>
+						<a href="#"><img src="{{ asset('template/images/youtube.svg') }}" alt=""></a>
+						<a href="#"><img src="{{ asset('template/images/tiktok.svg') }}" alt=""></a>
 					</div>
 				</div>
-				<div class="py-8">
-					<p class="uppercase pb-8 font-medium">Магазин</p>
-					<div class="opacity-50">
-						<p class="pb-4"><a href="#">Для детей</a></p>
-						<p class="pb-4"><a href="#">Для всех</a></p>
-					</div>
+				<div class="col-start-3">
+					<div><p class="font-medium pb-8">Команда<br>разработчиков</p></div>
 				</div>
-				<div class="py-8">
-					<p class="uppercase pb-8 font-medium">Информация</p>
-					<div class="opacity-50">
-						<p class="pb-4"><a href="#">Обо мне</a></p>
-						<p class="pb-4"><a href="#">Как стать моряком</a></p>
-						<p class="pb-4"><a href="#">Как стать блогером</a></p>
-						<p class="pb-4"><a href="#">Telegram - канал</a></p>
-						<p class="pb-4"><a href="#">Магазин</a></p>
-					</div>
+				<div>
+					<div><p class="font-medium pb-3">Дизайн</p></div>
+					<p class="pb-4 opacity-50"><a href="#">Дарья Акименко</a></p>
+				</div>
+				<div>
+					<div><p class="font-medium pb-3">Разработка</p></div>
+					<p class="pb-4 opacity-50"><a href="#">компания "Ракурс"</a></p>
 				</div>
 			</div>
 		</div>

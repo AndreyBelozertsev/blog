@@ -78,12 +78,20 @@ class BotWebhookHandler extends WebhookHandler
 
     public function tarif3(): void
     {
+        $chat = Telegraph::createChatInviteLink()
+            ->name('September promotional link')    //optional
+            ->expire(today()->addMonth())           //optional
+            ->memberLimit(42)                       //optional
+            ->withJoinRequest()                     //optional
+            ->send();
+
         $this->chat->message("Вы выбрали тарфиф на 180 дней. \nСсылка на оплату:")
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
-                    ->button('Оплатить')->url('https://ya.ru');
+                    ->button($chat)->url('https://ya.ru');
             })
             ->send();
+        Telegraph::chatMember($userId)->send();
     }
 
     public function success(): void

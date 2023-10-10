@@ -13,7 +13,9 @@ export default {
         'md': '720px',
         'lg': '960px',
         'xl': '1140px',
-        '2xl': '1550px',
+        '2xl': '1280px',
+        '3xl': '1440px',
+        '4xl': '1550px',
       },
       container: {
         center: true,
@@ -28,9 +30,6 @@ export default {
       },
 
       extend: {
-        spacing: {
-          '128': '128px',
-        },
         colors: {
             brand: "#14252C",   
             brandLight:"#173D49",    
