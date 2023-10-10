@@ -85,7 +85,6 @@ class BotWebhookHandler extends WebhookHandler
                     ->button($chat)->url('https://ya.ru');
             })
             ->send();
-        Telegraph::chatMember($userId)->send();
     }
 
     public function success(): void
