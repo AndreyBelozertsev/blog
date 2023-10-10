@@ -82,7 +82,7 @@ class BotWebhookHandler extends WebhookHandler
         $this->chat->message("Вы выбрали тарфиф на 180 дней. \nСсылка на оплату:")
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
-                    ->button($chat)->url('https://ya.ru');
+                    ->button('Оплатить')->url('https://ya.ru');
             })
             ->send();
     }
