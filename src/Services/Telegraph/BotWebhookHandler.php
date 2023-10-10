@@ -93,19 +93,14 @@ class BotWebhookHandler extends WebhookHandler
     {
         $telegraphChat = TelegraphChat::where('chat_id', '-1001570080663')->first();
 
-        // $link = $telegraphChat->createChatInviteLink()
-        //     ->name('September promotional link')    //optional
-        //     ->expire(today()->addMonth())           //optional
-        //     ->memberLimit(1)                       //optional
-        //     ->withJoinRequest()                     //optional
-        //     ->send();
-        
-        $link =Telegraph::createChatInviteLink()
+        $link = $telegraphChat->createInviteLink()
             ->name('September promotional link')    //optional
             ->expire(today()->addMonth())           //optional
-            ->memberLimit(42)                       //optional
+            ->memberLimit(1)                       //optional
             ->withJoinRequest()                     //optional
             ->send();
+        
+
 
         $this->chat->message($link)
             ->send();
