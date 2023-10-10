@@ -91,7 +91,7 @@ class BotWebhookHandler extends WebhookHandler
 
     public function testHook(): void
     {
-        $telegraphChat = TelegraphChat::where('chat_id', 1001570080663)->first();
+        $telegraphChat = TelegraphChat::where('chat_id', '-1001570080663')->first();
         $link = $telegraphChat->generatePrimaryInviteLink()->send();
 
         $this->chat->message($link)
