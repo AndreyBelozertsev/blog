@@ -40,7 +40,15 @@ class BotWebhookHandler extends WebhookHandler
         $chat_id = $chatJoinQuery->chat()->id();
         $user_id = $chatJoinQuery->from()->id();
         TelegraphCustomFacade::approveChatJoin( $chat_id, $user_id)->send();
-        
+
+        $telegraphChat = TelegraphChat::where('chat_id', '259548170')->first();
+  
+        $telegraphChat->html("Ваша заявка одобрена!"
+        )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
+            return $keyboard
+                ->button('В канал')->url($chatJoinQuery->inviteLink()->inviteLink());
+        })->send();
+
     }
     
     public function start(): void
@@ -114,16 +122,12 @@ class BotWebhookHandler extends WebhookHandler
     {
         $telegraphChat = TelegraphChat::where('chat_id', '-1001570080663')->first();
 
-        $link = $telegraphChat->createInviteLink()
-            ->name('September promotional link')    //optional
-            ->expire(today()->addMonth())           //optional
-            ->memberLimit(1)                       //optional
-            ->withJoinRequest()                     //optional
-            ->send();
+        // $link = $telegraphChat->createInviteLink()    
+        //     ->withJoinRequest()      
+        //     ->send();
         
 
-
-        $this->chat->message($link)
+        $this->chat->message('https://t.me/+pjVQf--vrXY5YTQy')
             ->send();
     }
 
