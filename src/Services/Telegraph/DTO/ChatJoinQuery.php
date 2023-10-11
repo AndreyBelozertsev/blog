@@ -12,7 +12,6 @@ use Illuminate\Contracts\Support\Arrayable;
 
 class ChatJoinQuery implements Arrayable
 {
-    private int $id;
 
     private User $from;
 
@@ -25,28 +24,22 @@ class ChatJoinQuery implements Arrayable
     }
 
     /**
-     * @param array{id:int, from:array<string, mixed>, chat:array<string, mixed>, invitedLink:array<string, mixed>,} $data
+     * @param array{from:array<string, mixed>, chat:array<string, mixed>, invitedLink:array<string, mixed>,} $data
      */
     public static function fromArray(array $data): ChatJoinQuery
     {
         $chatJoinQuery = new self();
-
-        $chatJoinQuery->id = $data['id'];
 
         /* @phpstan-ignore-next-line */
         $chatJoinQuery->from = User::fromArray($data['from']);
 
         $chatJoinQuery->chat = Chat::fromArray($data['chat']);
 
-        $chatJoinQuery->inviteLink = InviteLink::formArray($data['invite_link']);
+        $chatJoinQuery->inviteLink = InviteLink::fromArray($data['invite_link']);
 
         return $chatJoinQuery;
     }
 
-    public function id(): int
-    {
-        return $this->id;
-    }
 
     public function from(): User
     {
@@ -68,7 +61,6 @@ class ChatJoinQuery implements Arrayable
     public function toArray(): array
     {
         return array_filter([
-            'id' => $this->id,
             'from' => $this->from->toArray(),
             'chat' => $this->chat->toArray(),
             'invite_link' => $this->inviteLink->toArray(),
