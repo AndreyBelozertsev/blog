@@ -1,7 +1,7 @@
 <?php
 namespace Services\Telegraph\Models;
 
-use DefStudio\Telegraph\Models\Telegraphchat as TelegraphChatOriginal;
+use DefStudio\Telegraph\Models\TelegraphChat as TelegraphChatOriginal;
 
 class TelegraphChat extends TelegraphChatOriginal
 {

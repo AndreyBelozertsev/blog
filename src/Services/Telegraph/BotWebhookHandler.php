@@ -12,20 +12,20 @@ use DefStudio\Telegraph\Keyboard\Button;
 use Services\Telegraph\DTO\ChatJoinQuery;
 use DefStudio\Telegraph\DTO\CallbackQuery;
 use DefStudio\Telegraph\Keyboard\Keyboard;
-use DefStudio\Telegraph\Models\TelegraphBot;
+use Services\Telegraph\Models\TelegraphChat;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
-use DefStudio\Telegraph\Models\TelegraphChat;
+use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 
+
 class BotWebhookHandler extends WebhookHandler
 {
 
-    public function handle(Request $request, TelegraphBot $bot): void
+    public function handle(Request $request, \DefStudio\Telegraph\Models\TelegraphBot $bot): void
     {
         parent::handle($request, $bot);
-
 
         if ($this->request->has('chat_join_request')) {
             /* @phpstan-ignore-next-line */
@@ -37,7 +37,10 @@ class BotWebhookHandler extends WebhookHandler
 
     protected function handleChatJoinQuery(ChatJoinQuery $chatJoinQuery): void
     {
-        Log::info($chatJoinQuery);
+        $chat_id = $chatJoinQuery->chat()->id();
+        $user_id = $chatJoinQuery->from()->id();
+        TelegraphCustomFacade::approveChatJoin( $chat_id, $user_id)->send();
+        
     }
     
     public function start(): void
