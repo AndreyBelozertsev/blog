@@ -172,7 +172,8 @@ return [
         App\Providers\ViewServiceProvider::class,
 
         Barryvdh\Debugbar\ServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class
+        Intervention\Image\ImageServiceProvider::class,
+        Services\Telegraph\TelegraphServiceProvider::class,
         
     ])->toArray(),
 
@@ -189,8 +190,9 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         'Debugbar' => Barryvdh\Debugbar\Facades\Debugbar::class,
+        'TelegraphCustom' => Services\Telegraph\Facade\TelegraphCustom::class,
         // 'Example' => App\Facades\Example::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
     ])->toArray(),
 
 ];

@@ -10,7 +10,6 @@ use DefStudio\Telegraph\DTO\Message;
 use DefStudio\Telegraph\DTO\InlineQuery;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\DTO\CallbackQuery;
-use DefStudio\Telegraph\Facades\Telegraph;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use DefStudio\Telegraph\Models\TelegraphBot;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
@@ -29,8 +28,15 @@ class BotWebhookHandler extends WebhookHandler
 
         if ($this->request->has('chat_join_request')) {
             /* @phpstan-ignore-next-line */
-            Log::info($bot);
+
+            $this->handleChatJoinQuery(ChatJoinQuery::fromArray($this->request->input('chat_join_request')));
         }
+
+    }
+
+    protected function handleChatJoinQuery(ChatJoinQuery $chatJoinQuery): void
+    {
+        Log::info($chatJoinQuery);
     }
     
     public function start(): void
