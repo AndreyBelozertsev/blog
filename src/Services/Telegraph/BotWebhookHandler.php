@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Log;
 use DefStudio\Telegraph\DTO\Message;
 use DefStudio\Telegraph\DTO\InlineQuery;
 use DefStudio\Telegraph\Keyboard\Button;
+use Services\Telegraph\DTO\ChatJoinQuery;
 use DefStudio\Telegraph\DTO\CallbackQuery;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use DefStudio\Telegraph\Models\TelegraphBot;
