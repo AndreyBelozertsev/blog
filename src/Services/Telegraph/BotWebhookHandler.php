@@ -46,7 +46,7 @@ class BotWebhookHandler extends WebhookHandler
         $telegraphChat->html("Ваша заявка одобрена!"
         )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
             return $keyboard
-                ->button('В канал')->url($chatJoinQuery->inviteLink()->inviteLink());
+                ->button('В канал')->url('https://t.me/+Ybl8epmC-qZiZDgy');
         })->send();
 
     }
