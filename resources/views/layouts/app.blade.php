@@ -79,7 +79,7 @@
 					<p class="pb-4 opacity-50"><a href="#">Дарья Акименко</a></p>
 				</div>
 				<div>
-					<div><p class="font-medium pb-3">Разработка</p></div>
+					<div><p class="font-medium pb-3">Разработка</p> </div>
 					<p class="pb-4 opacity-50"><a href="#">компания "Ракурс"</a></p>
 				</div>
 			</div>
