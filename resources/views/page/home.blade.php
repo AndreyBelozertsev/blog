@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="grid grid-cols-5 gap-8">
                     <div class="pt-4 md:pt-24 col-span-5 md:col-span-3 hidden md:block z-10">
-                        <p class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-light relative leading-tight">ОФИЦИАЛЬНЫЙ САЙТ<span class="absolute pl-4 opacity-50 text-base text-sm lg:text-base xl:text-lg 3xl:text-2xl md:-top-4">@papazzhuk</span></p>
+                        <p class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-light relative leading-tight">ОФИЦИАЛЬНЫЙ САЙТ<span class="absolute pl-4 opacity-50 text-sm md:text-base lg:text-base xl:text-lg 3xl:text-2xl md:-top-4">@papazzhuk</span></p>
                         <p class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-medium md:text-right relative leading-tight">АЛЕКСАНДРА<br><span class="md:absolute -right-24">ЖУКА<span></p>
                     </div>
                     <div class="relative pt-24 col-span-5 md:col-span-2 md:row-span-3 order-1">
@@ -14,7 +14,7 @@
                             <img src="{{ asset('template/images/1-1.png') }}" alt="">
                         </div>
                         <div class="absolute -bottom-2 md:hidden bg-gradient-to-t from-brand via-brand to-transparent h-fit w-full pb-8 pt-16 px-4">
-                            <p class="text-lg xs:text-xl sm:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-light relative leading-tight">ОФИЦИАЛЬНЫЙ САЙТ<span class="absolute pl-4 opacity-50 md:text-base text-sm lg:text-base xl:text-lg 3xl:text-2xl md:-top-4">@papazzhuk</span></p>
+                            <p class="text-lg xs:text-xl sm:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-light relative leading-tight">ОФИЦИАЛЬНЫЙ САЙТ<span class="absolute pl-4 opacity-50 text-sm md:text-base lg:text-base xl:text-lg 3xl:text-2xl md:-top-4">@papazzhuk</span></p>
                             <p class="text-lg xs:text-xl sm:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-medium md:text-right relative leading-tight">АЛЕКСАНДРА<br><span class="md:absolute -right-24">ЖУКА<span></p>
                         </div>
                     </div>
@@ -179,7 +179,7 @@
             <div class="container">
                 <div class="md:grid grid-cols-5">
                     <div class="flex pb-10 sm:pb-16 md:pb-28 col-start-2 col-span-4">
-                        <p style="text-indent:2em" class="text-lg md:text-2xl text-3xl  uppercase">Если вы мечтаете о карьере моряка<br>то это <span class="opacity-50">видеоруководство</span> - ваш первый шаг к<br>осуществлению этой <span class="opacity-50">мечты</span></p>
+                        <p class="md:indent-[20%] text-lg md:text-2xl text-3xl  uppercase">Если вы мечтаете о карьере моряка<br>то это <span class="opacity-50">видеоруководство</span> - ваш первый шаг к<br>осуществлению этой <span class="opacity-50">мечты</span></p>
                     </div>
                 </div>
             </div>
@@ -202,7 +202,7 @@
                         <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
                                 <p class="text-xl xl:text-2xl 3xl:text-4xl text-center pb-3">Печатный<br>файл</p>
-                                <p class="text-sm text-base text-center font-thin px-4 opacity-50">с полезными ссылками, файлами и подробными инструкциями по обучению и получению морских документов</p>
+                                <p class="text-sm md:text-base text-center font-thin px-4 opacity-50">с полезными ссылками, файлами и подробными инструкциями по обучению и получению морских документов</p>
                             </div>
                         </div>
                     </div>
@@ -216,33 +216,33 @@
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid lg:grid-cols-4 2xl:grid-cols-5 gap-4">
-                    <div class="hidden lg:block lg:col-span-2 2xl:col-span-1">
+                <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4">
+                    <div class="hidden xl:block 2xl:col-span-1">
                         <img src="{{ asset('template/images/6-1.jpg') }}" alt="">
                     </div>
-                    <div class="border border-white lg:col-span-2 2xl:col-span-4">
+                    <div class="border border-white xl:col-span-2 2xl:col-span-4">
                         <div class="p-8">
                             <div class="pb-16">
                                 <p class="text-xl lg:text-3xl xl:text-4xl 2xl:text-[40px] uppercase font-light">Получить доступ</p>
                                 <div class="grid grid-cols-5">
-                                    <div class="col-span-5 sm:col-span-4 sm:col-start-2">
+                                    <div class="col-span-5 lg:col-span-4 lg:col-start-2">
                                         <p class="text-xl lg:text-3xl xl:text-4xl 2xl:text-[40px] uppercase font-medium">к видеоруководству</p>
                                     </div> 
                                 </div>
                             </div>
                             <div class="flex flex-col">
-                                <div class="grid md:grid-cols-5  pb-10">
-                                    <div class="md:col-span-2 md:col-start-2">
+                                <div class="grid lg:grid-cols-5  pb-10">
+                                    <div class="lg:col-span-2 lg:col-start-2">
                                         <p class="text-lg xl:text-xl 2xl:text-2xl">Не упустите шанс достичь успехов в карьере  моряка прямо сейчас! </p>
                                     </div> 
                                 </div>
-                                <div class="grid md:grid-cols-5  pb-10">
-                                    <div class="md:col-span-2 md:col-start-2">
+                                <div class="grid lg:grid-cols-5  pb-10">
+                                    <div class="lg:col-span-2 lg:col-start-2">
                                         <p class="ff-Montserrat">Оставьте заявку и наши менеджеры свяжутся с вами в ближайшее время</p>
                                     </div> 
                                 </div>
-                                <div class="grid md:grid-cols-5">
-                                    <div class="col-span-4 xl:col-span-4 xl:col-start-2">
+                                <div class="grid lg:grid-cols-5">
+                                    <div class="col-span-4 lg:col-span-4 lg:col-start-2">
                                         <a class="ff-Montserrat text-center text-xs xs:text-sm lg:text-lg py-4 md:py-6 px-3 md:px-4 bg-accent leading-none justify-between" href="#"><span class="pr-2 sm:pr-4">Получить видеоруководство</span>
                                             <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M15.9687 11.1881L15.9687 4.03116L12.3349 7.68389C13.6616 6.35013 15.9389 7.27978 15.9533 9.16098L15.9687 11.1881Z" fill="white"/>
@@ -260,35 +260,35 @@
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid grid-cols-5 pb-24">
+                <div class="md:grid grid-cols-5 pb-24">
                     <div class="col-span-4 col-start-2">
-                        <h2 class="text-6xl uppercase font-extralight">Как стать блогером?</h2>
+                        <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Как стать блогером?</h2>
                     </div>
                 </div>
                 <div class="pb-24">
-                    <div class="text-3xl uppercase">
-                        <p style="text-indent:20%">Если вы мечтаете стать <span class="opacity-50">блогером</span>, делиться своими идеями и историями с миром, то мои <span class="opacity-50">видеоуроки</span> предоставят необходимые инструменты <span class="opacity-50">для успешного старта</span> в этой сфере</p>
+                    <div class="text-lg md:text-2xl text-3xl uppercase">
+                        <p class="md:indent-[20%]" >Если вы мечтаете стать <span class="opacity-50">блогером</span>, делиться своими идеями и историями с миром, то мои <span class="opacity-50">видеоуроки</span> предоставят необходимые инструменты <span class="opacity-50">для успешного старта</span> в этой сфере</p>
                     </div>
                 </div>
                 <div class="pb-20">
                     <h2 class="text-base px-2 font-thin border-r border-l w-fit text-accentSecondary border-accentSecondary">Отвечу на ваши вопросы:</h2>
                 </div>
-                <div class="grid grid-cols-3 gap-5">
-                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-2xl"><p class="text-center">Как начать <span class="opacity-50">вести блог?</span></p></div>
-                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-2xl"><p class="text-center">Как <span class="opacity-50">масштабироваться</span> в соц. сетях?</p></div>
-                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-2xl"><p class="text-center">Как <span class="opacity-50">зарабатывать</span> на своём блоге?</p></div>
+                <div class="grid lg:grid-cols-3 gap-5">
+                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-lg xl:text-xl 2xl:text-2xl"><p class="text-center">Как начать <span class="opacity-50">вести блог?</span></p></div>
+                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-lg xl:text-xl 2xl:text-2xl"><p class="text-center">Как <span class="opacity-50">масштабироваться</span> в соц. сетях?</p></div>
+                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-lg xl:text-xl 2xl:text-2xl"><p class="text-center">Как <span class="opacity-50">зарабатывать</span> на своём блоге?</p></div>
                 </div>
             </div>
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid grid-cols-9">
-                    <div class="col-span-4 col-start-3 flex flex-col justify-end px-20">
-                        <p class="font-medium text-3xl pb-4 font-medium">Для блогов любой ниши!</p>
-                        <p class="text-xl pb-10">Делюсь рабочими инструментами и личной стратегией <span class="opacity-50">быстрого роста</span> во всех соц.сетях <span class="opacity-50">через видеоконтент без вложений.</span></p>
+                <div class="grid md:grid-cols-9 gap-8">
+                    <div class="md:col-span-6 2xl:col-span-4 2xl:col-start-3 flex flex-col xl:justify-end lg:px-20 order-2 md:order-1">
+                        <p class="font-medium text-lg md:text-2xl 2xl:text-3xl pb-4 font-medium">Для блогов любой ниши!</p>
+                        <p class="text-base md:text-lg 2xl:text-xl pb-10">Делюсь рабочими инструментами и личной стратегией <span class="opacity-50">быстрого роста</span> во всех соц.сетях <span class="opacity-50">через видеоконтент без вложений.</span></p>
                         <p class="ff-Montserrat">За 3 года «хакнул» соц.сети . Тысячи новых подписчиков каждый день.</p>
                     </div>
-                    <div class="col-span-3">
+                    <div class="md:col-span-3 order-1 md:order-2">
                         <img src="{{ asset('template/images/7-1.jpg') }}" alt="">
                     </div>
                 </div>
@@ -297,55 +297,55 @@
         <section class="pb-36">
             <div class="container">
                 <div class="flex flex-wrap justify-center">
-                    <div class="w-1/4 flex justify-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72  border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-4xl text-center">450 000</p>
-                                <p class="text-base text-center font-thin px-4"><span class="opacity-50">подписчиков за 3 месяца</span> через Reels в Instagram</p>
+                                <p class="text-xl xl:text-2xl 3xl:text-4xl text-center">450 000</p>
+                                <p class="text-sm md:text-base text-center font-thin px-4"><span class="opacity-50">подписчиков за 3 месяца</span> через Reels в Instagram</p>
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/4 flex justify-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center overflow-hidden z-50">
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center overflow-hidden z-50">
                             <div>
                                 <img src="{{ asset('template/images/insta.jpg') }}" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/4 flex justify-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-4xl text-center">420 000</p>
-                                <p class="text-base text-center font-thin px-4"><span class="opacity-50">подписчиков за год на</span> Youtube</p>
+                                <p class="text-xl xl:text-2xl 3xl:text-4xl text-center">420 000</p>
+                                <p class="text-sm md:text-base text-center font-thin px-4"><span class="opacity-50">подписчиков за год на</span> Youtube</p>
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/4 flex justify-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-4xl text-center">238 000 000</p>
-                                <p class="text-base text-center font-thin px-4"><span class="opacity-50">просмотров на</span> Youtube</p>
+                                <p class="text-xl xl:text-2xl 3xl:text-4xl text-center">238 000 000</p>
+                                <p class="text-sm md:text-base text-center font-thin px-4"><span class="opacity-50">просмотров на</span> Youtube</p>
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/4 flex justify-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-4xl text-center">3 300 000</p>
-                                <p class="text-base text-center font-thin px-4"><span class="opacity-50">подписчиков в</span> TikTok</p>
+                                <p class="text-xl xl:text-2xl 3xl:text-4xl text-center">3 300 000</p>
+                                <p class="text-sm md:text-base text-center font-thin px-4"><span class="opacity-50">подписчиков в</span> TikTok</p>
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/4 flex justify-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-4xl text-center">1,8 млрд.</p>
-                                <p class="text-base text-center font-thin px-4"><span class="opacity-50">просмотров в</span> TikTok</p>
+                                <p class="text-xl xl:text-2xl 3xl:text-4xl text-center">1,8 млрд.</p>
+                                <p class="text-sm md:text-base text-center font-thin px-4"><span class="opacity-50">просмотров в</span> TikTok</p>
                             </div>
                         </div>
                     </div>
-                    <div class="w-1/4 flex justify-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center overflow-hidden">
+                    <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center overflow-hidden">
                             <div>
                                 <img src="{{ asset('template/images/tiktok.jpg') }}" alt="">
                             </div>
@@ -356,24 +356,24 @@
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid grid-cols-5 pb-24">
+                <div class="md:grid grid-cols-5 pb-24">
                     <div class="col-span-4 col-start-2">
-                        <h2 class="text-6xl uppercase font-extralight">Кому подойдут мои<br><span class="font-medium ml-40">видеоуроки</span></h2>
+                        <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Кому подойдут мои<br><span class="font-medium md:ml-40">видеоуроки</span></h2>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-5 pb-24">
-                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-2xl"><p class="text-center">Тем, <span class="opacity-50">кто хочет начать блог</span> и поделиться своими интересами и знаниями</p></div>
-                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-2xl"><p class="text-center"><span class="opacity-50">Студентам, выпускникам и профессионалам,</span> ищущим возможности в соц.сетях</p></div>
-                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-2xl"><p class="text-center"><span class="opacity-50">Предпринимателям,</span> желающим  продвигать свой бизнес</p></div>
+                <div class="grid lg:grid-cols-3 gap-5 pb-24">
+                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-lg xl:text-xl 2xl:text-2xl"><p class="text-center">Тем, <span class="opacity-50">кто хочет начать блог</span> и поделиться своими интересами и знаниями</p></div>
+                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-lg xl:text-xl 2xl:text-2xl"><p class="text-center"><span class="opacity-50">Студентам, выпускникам и профессионалам,</span> ищущим возможности в соц.сетях</p></div>
+                    <div class="border border-white py-8 px-4 ff-Montserrat uppercase text-lg xl:text-xl 2xl:text-2xl"><p class="text-center"><span class="opacity-50">Предпринимателям,</span> желающим  продвигать свой бизнес</p></div>
                 </div>
-                <div class="grid grid-cols-5 gap-10 pb-24">
-                    <div>
-                        <p class="ff-Montserrat text-2xl">
-                            5 видеоуроков по созданию рилс :
+                <div class="xl:grid grid-cols-5 gap-10 pb-24">
+                    <div class="col-span-2 2xl:col-span-1">
+                        <p class="ff-Montserrat text-lg md:text-2xl pb-10 xl:pb-0">
+                            5 видеоуроков по созданию рилс:
                         </p>
                     </div>
                     <div class="col-span-2">
-                        <ul class="ff-Montserrat">
+                        <ul class="ff-Montserrat text-sm md:text-base">
                             <li class="pb-4">- Вся правда о <span class="opacity-50">рилс</span></li>
                             <li class="pb-4">- Виды <span class="opacity-50">контента</span> и формирования <span class="opacity-50">целевой аудитории</span></li>
                             <li class="pb-4">- Создание образа и <span class="opacity-50">позиционирование в соц сетях</span></li>
@@ -382,29 +382,29 @@
                         </ul>
                     </div>
                 </div>
-                <div class="grid grid-cols-5 gap-4">
-                    <div>
+                <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4">
+                    <div class="hidden xl:block 2xl:col-span-1">
                         <img src="{{ asset('template/images/8-1.jpg') }}" alt="">
                     </div>
-                    <div class="col-span-4 border border-white">
+                    <div class="border border-white xl:col-span-2 2xl:col-span-4">
                         <div class="p-8">
                             <div class="pb-16">
-                                <p class="text-[40px] uppercase font-light">Получить доступ</p>
+                                <p class="text-xl lg:text-3xl xl:text-4xl 2xl:text-[40px] uppercase font-light">Получить доступ</p>
                                 <div class="grid grid-cols-5">
-                                    <div class="col-span-4 col-start-2">
-                                        <p class="text-[40px] uppercase font-medium">к видеоруководству</p>
+                                    <div class="col-span-5 lg:col-span-4 lg:col-start-2">
+                                        <p class="text-xl lg:text-3xl xl:text-4xl 2xl:text-[40px] uppercase font-medium">к видеоруководству</p>
                                     </div> 
                                 </div>
                             </div>
                             <div class="flex flex-col">
-                                <div class="grid grid-cols-5  pb-10">
-                                    <div class="col-span-2 col-start-2">
-                                        <p class="ff-Montserrat">Оставьте заявку и с вами свяжутся в ближайшее время</p>
+                                <div class="grid lg:grid-cols-5  pb-10">
+                                    <div class="lg:col-span-2 lg:col-start-2">
+                                        <p class="ff-Montserrat">Оставьте заявку и наши менеджеры свяжутся с вами в ближайшее время</p>
                                     </div> 
                                 </div>
-                                <div class="grid grid-cols-5">
-                                    <div class="col-span-2 col-start-2">
-                                        <a class="ff-Montserrat text-center text-lg py-6 bg-accent leading-none px-4 justify-between" href="#"><span class="pr-4">Получить видеоруководство</span>
+                                <div class="grid lg:grid-cols-5">
+                                    <div class="col-span-4 lg:col-span-4 lg:col-start-2">
+                                        <a class="ff-Montserrat text-center text-xs xs:text-sm lg:text-lg py-4 md:py-6 px-3 md:px-4 bg-accent leading-none justify-between" href="#"><span class="pr-2 sm:pr-4">Получить видеоруководство</span>
                                             <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M15.9687 11.1881L15.9687 4.03116L12.3349 7.68389C13.6616 6.35013 15.9389 7.27978 15.9533 9.16098L15.9687 11.1881Z" fill="white"/>
                                                 <path d="M15.9687 4.03116H11.1974H8.81176L10.827 4.03845C12.7252 4.04532 13.6736 6.33819 12.3349 7.68389L15.9687 4.03116Z" fill="white"/>
@@ -421,16 +421,16 @@
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid grid-cols-5 pb-24 gap-36">
-                    <div class="col-span-4 col-start-2">
-                        <h2 class="text-6xl uppercase font-extralight">Консультация со мной</h2>
+                <div class="grid md:grid-cols-5 pb-24 gap-36">
+                    <div class="md:col-span-4 md:col-start-2">
+                        <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Консультация со мной</h2>
                     </div>
                 </div>
-                <div class="grid grid-cols-5 pb-24 gap-12">
-                    <div class="flex flex-col justify-center">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 pb-24 gap-12">
+                    <div class="flex md:flex-col justify-center order-1 items-center">
                         <img src="{{ asset('template/images/9-1.png') }}" alt="">
                     </div>
-                    <div class="col-span-2 flex flex-col justify-center">
+                    <div class="sm:col-span-2 flex flex-col justify-center order-3 lg:order-2">
                         <p class="ff-Montserrat pb-20">Подойдёт для тех, кому достаточно разовой консультации о профессии моряка или о блогерстве</p>
                         <form action="">
                             <div class="pb-6">
@@ -456,11 +456,11 @@
                             </div>   
                         </form>
                     </div>
-                    <div class="col-start-5 flex flex-col justify-center">
-                        <div class="text-opacity-50 w-48 h-48 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="2xl:col-start-5 flex flex-col justify-center items-center order-2 lg:order-3">
+                        <div class="text-opacity-50 w-36 sm:w-48 h-36 sm:h-48 border border-white rounded-full flex justify-center items-center" style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-4xl text-center pb-2">5 000<br>руб.</p>
-                                <p class="text-base text-center font-thin px-4">стоимость<br>консультации</p>
+                                <p class="text-xl xl:text-2xl 3xl:text-4xl text-center pb-2">5 000<br>руб.</p>
+                                <p class="text-sm md:text-base text-center font-thin px-4">стоимость<br>консультации</p>
                             </div>
                         </div>
                     </div>
@@ -470,68 +470,68 @@
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid grid-cols-5 pb-24">
+                <div class="md:grid grid-cols-5 pb-24">
                     <div class="col-span-4 col-start-2">
-                        <h2 class="text-6xl uppercase font-extralight">Эксклюзивный<br><span class="font-medium ml-40">Telegram-канал</span></h2>
+                        <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Эксклюзивный<br><span class="font-medium md:ml-40">Telegram-канал</span></h2>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-6 pb-36">
-                    <div class="col-span-2">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-36">
+                    <div class="md:col-span-2">
                         <img class="w-full" src="{{ asset('template/images/10-1.jpg') }}">
                     </div>
                     <div class="flex flex-col justify-center items-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-2xl text-center pb-2 ff-Montserrat p-4">Избранные длинные видео в <span class="opacity-50">оригинальном качестве</span></p>
+                                <p class="text-lg xl:text-xl 2xl:text-2xl text-center pb-2 ff-Montserrat p-4">Избранные длинные видео в <span class="opacity-50">оригинальном качестве</span></p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-start-2">
+                    <div class="md:col-start-2">
                         <img class="w-full" src="{{ asset('template/images/10-2.jpg') }}">
                     </div>
                     <div>
                         <img class="w-full" src="{{ asset('template/images/10-3.jpg') }}">
                     </div>
                 </div>
-                <div class="grid grid-cols-4 gap-6 pb-24">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-24">
                     <div>
                         <img class="w-full" src="{{ asset('template/images/10-4.jpg') }}">
                     </div>
                     <div class="flex flex-col justify-center items-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-2xl text-center pb-2 ff-Montserrat p-4">Авторские фото для заставки на <span class="opacity-50">ваши смартфоны</span></p>
+                                <p class="text-lg xl:text-xl 2xl:text-2xl text-center pb-2 ff-Montserrat p-4">Авторские фото для заставки на <span class="opacity-50">ваши смартфоны</span></p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <img class="w-full" src="{{ asset('template/images/10-5.jpg') }}">
                     </div>
-                    <div class="col-start-3">
+                    <div class="lg:col-start-3">
                         <img class="w-full" src="{{ asset('template/images/10-6.jpg') }}">
                     </div>
                     <div>
                         <img class="w-full" src="{{ asset('template/images/10-7.jpg') }}">
                     </div>
                 </div>
-                <div class="grid grid-cols-4 gap-6 pb-24">
-                    <div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-24">
+                    <div class="order-1">
                         <img class="w-full" src="{{ asset('template/images/10-8.jpg') }}">
                     </div>
-                    <div class="flex flex-col justify-center items-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="flex flex-col justify-center items-center order-2">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-2xl text-center pb-2 ff-Montserrat p-4">Открытые комментарии для <span class="opacity-50">живого общения</span></p>
+                                <p class="text-lg xl:text-xl 2xl:text-2xl text-center pb-2 ff-Montserrat p-4">Открытые комментарии для <span class="opacity-50">живого общения</span></p>
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div class="order-3 md:order-4 lg:order-3">
                         <img class="w-full" src="{{ asset('template/images/10-9.jpg') }}">
                     </div>
-                    <div class="flex flex-col justify-center items-center">
-                        <div class="text-opacity-50 w-72 h-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                    <div class="flex flex-col justify-center items-center order-4 md:order-3 lg:order-4">
+                        <div class="text-opacity-50 h-56 lg:h-56 2xl:h-60 3xl:h-72 w-56 lg:w-56 2xl:w-60 3xl:w-72 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                             <div>
-                                <p class="text-2xl text-center pb-2 ff-Montserrat p-4">Возможность подержать мои <span class="opacity-50">новые проекты для вас</span></p>
+                                <p class="text-lg xl:text-xl 2xl:text-2xl  text-center pb-2 ff-Montserrat p-4">Возможность подержать мои <span class="opacity-50">новые проекты для вас</span></p>
                             </div>
                         </div>
                     </div>
@@ -540,35 +540,35 @@
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid grid-cols-5 gap-4">
-                    <div>
+                <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4">
+                    <div class="hidden xl:block">
                         <img src="{{ asset('template/images/8-1.jpg') }}" alt="">
                     </div>
-                    <div class="col-span-4 border border-white">
+                    <div class="border border-white xl:col-span-2 2xl:col-span-4">
                         <div class="p-8">
                             <div class="pb-10">
-                                <p class="text-[40px] uppercase font-light">Получить доступ</p>
+                                <p class="text-xl lg:text-3xl xl:text-4xl 2xl:text-[40px] uppercase font-light">Получить доступ</p>
                                 <div class="grid grid-cols-5">
-                                    <div class="col-span-4 col-start-2">
-                                        <p class="text-[40px] uppercase font-medium">к видеоруководству</p>
+                                    <div class="col-span-5 lg:col-span-4 lg:col-start-2">
+                                        <p class="text-xl lg:text-3xl xl:text-4xl 2xl:text-[40px] uppercase font-medium">к видеоруководству</p>
                                     </div> 
                                 </div>
                             </div>
                             <div class="flex flex-col">
-                                <div class="grid grid-cols-5">
-                                    <div class="col-span-2 col-start-2 pb-10">
+                                <div class="grid lg:grid-cols-5 xl:grid-cols-2 2xl:grid-cols-5 gap-4">
+                                    <div class="lg:col-span-3 xl:col-span-1 2xl:col-span-3 lg:col-start-2 xl:col-start-1 2xl:col-start-2 pb-10">
                                         <p class="ff-Montserrat">Оставьте заявку и наши менеджеры свяжутся с вами в ближайшее время</p>
                                     </div> 
-                                    <div class="col-span-2 row-span-2 flex flex-col justify-center items-center">
-                                        <div class="text-opacity-50 w-40 h-40 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
+                                    <div class="lg:col-span-1 lg:row-span-2 flex flex-col justify-center items-center">
+                                        <div class="text-opacity-50 h-32 lg:h-40 2xl:h-40 3xl:h-40 w-32 lg:w-40 2xl:w-40 3xl:w-40 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                                             <div>
-                                                <p class="text-3xl text-center pb-2">290 <span class="text-xl">руб.</span></p>
-                                                <p class="text-base text-center font-thin px-4">стоимость<br>подписки</p>
+                                                <p class="text-lg md:text-2xl  3xl:text-3xl text-center pb-2">290 <span class="text-xl">руб.</span></p>
+                                                <p class="text-sm md:text-base text-center font-thin px-4">стоимость<br>подписки</p>
                                             </div>
                                         </div>
                                     </div> 
-                                    <div class="col-span-2 col-start-2">
-                                        <a class="ff-Montserrat text-center text-lg py-6 bg-accent leading-none px-4 justify-between" href="#"><span class="pr-4">Получить видеоруководство</span>
+                                    <div class="lg:col-span-3 xl:col-span-5 2xl:col-span-3  lg:col-start-2 xl:col-start-1 2xl:col-start-2">
+                                        <a class="block ff-Montserrat text-center text-center text-xs xs:text-sm lg:text-lg py-4 md:py-6 px-3 md:px-4 bg-accent leading-none justify-between" href="#"><span class="pr-2 sm:pr-4">Получить видеоруководство</span>
                                             <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M15.9687 11.1881L15.9687 4.03116L12.3349 7.68389C13.6616 6.35013 15.9389 7.27978 15.9533 9.16098L15.9687 11.1881Z" fill="white"/>
                                                 <path d="M15.9687 4.03116H11.1974H8.81176L10.827 4.03845C12.7252 4.04532 13.6736 6.33819 12.3349 7.68389L15.9687 4.03116Z" fill="white"/>
@@ -585,163 +585,163 @@
         </section>
         <section class="pb-36">
             <div class="container">
-                <div class="grid grid-cols-5 pb-24">
+                <div class="md:grid grid-cols-5 pb-24">
                     <div class="col-span-4 col-start-2">
-                        <h2 class="text-6xl uppercase font-extralight relative">Эксклюзивный<br><span class="font-medium ml-72">магазин</span><span class="opacity-50 absolute ff-Montserrat text-2xl font-medium bottom-10 lowercase">@papazzhuk</span></h2>
+                        <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight relative">Эксклюзивный<br><span class="font-medium md:ml-40 xl:ml-60 3xl:ml-72">магазин</span><span class="hidden md:inline opacity-50 absolute ff-Montserrat font-medium bottom-10 lowercase text-base text-sm lg:text-base xl:text-lg 3xl:text-2xl">@papazzhuk</span></h2>
                     </div>
                 </div>
-                <div class="grid grid-cols-5 pb-24">
-                    <div class="col-span-2 col-start-3">
-                        <p class="text-2xl">Неповторимый ассортимент <span class="opacity-50">одежды, аксессуаров и коллекционных предметов</span>, которые отражают стиль и уникальность моего блога</p>
+                <div class="lg:grid grid-cols-5 pb-24">
+                    <div class="col-span-3 xl:col-span-2 col-start-2 xl:col-start-3">
+                        <p class="text-base lg:text-base xl:text-lg 3xl:text-2xl">Неповторимый ассортимент <span class="opacity-50">одежды, аксессуаров и коллекционных предметов</span>, которые отражают стиль и уникальность моего блога</p>
                     </div>
                 </div>
                 <div class="flex gap-4 pb-8 border-b">
-                    <button class="text-xl font-medium ff-Montserrat px-10 py-5 border opacity-50">
+                    <button class="text-lg 2xl:text-xl font-medium ff-Montserrat px-6 md:px-8 2xl:px-10 py-3 md:py-4 2xl:py-5 border opacity-50">
                         Для детей
                     </button>
-                    <button class="text-xl font-medium ff-Montserrat px-10 py-5 border">
+                    <button class="text-lg 2xl:text-xl font-medium ff-Montserrat px-6 md:px-8 2xl:px-10 py-3 md:py-4 2xl:py-5 border">
                         Для всех
                     </button>
                 </div>
-                <div class="flex gap-4 pt-8 pb-24">
-                    <button class="font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                <div class="flex flex-wrap gap-4 pt-8 pb-24">
+                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
                         Печатная продукция
                     </button>
-                    <button class="font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
                        Сувениры
                     </button>
-                    <button class="font-medium ff-Montserrat px-4 py-2 border">
+                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border">
                        Одежда
                     </button>
-                    <button class="font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
                        Книга
                     </button>
                 </div>
-                <div class="grid grid-cols-3 pb-24 gap-6">
+                <div class="grid xs:grid-cols-2 lg:grid-cols-3 pb-24 gap-6">
                     <div>
                         <div class="pb-4">
                             <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
                         </div>
-                        <div class="pb-10">
-                            <p>Футболка мужская</p>
+                        <div class="pb-4 md:pb-6 lg:pb-10">
+                            <p class="text-base">Футболка мужская</p>
                         </div>
-                        <div class="grid grid-cols-3">
-                            <a class="ff-Montserrat px-4 py-2 col-span-2 border flex justify-between" href="#">Перейти в магазин
+                        <div class="grid lg:grid-cols-3">
+                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
                                 <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                                     <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
                                     <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <span class="text-xl justify-self-end self-end">3 000 руб.</span>
+                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
                         </div>
                     </div>
                     <div>
                         <div class="pb-4">
                             <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
                         </div>
-                        <div class="pb-10">
-                            <p>Футболка мужская</p>
+                        <div class="pb-4 md:pb-6 lg:pb-10">
+                            <p class="text-base">Футболка мужская</p>
                         </div>
-                        <div class="grid grid-cols-3">
-                            <a class="ff-Montserrat px-4 py-2 col-span-2 border flex justify-between" href="#">Перейти в магазин
+                        <div class="grid lg:grid-cols-3">
+                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
                                 <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                                     <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
                                     <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <span class="text-xl justify-self-end self-end">3 000 руб.</span>
+                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
                         </div>
                     </div>
                     <div>
                         <div class="pb-4">
                             <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
                         </div>
-                        <div class="pb-10">
-                            <p>Футболка мужская</p>
+                        <div class="pb-4 md:pb-6 lg:pb-10">
+                            <p class="text-base">Футболка мужская</p>
                         </div>
-                        <div class="grid grid-cols-3">
-                            <a class="ff-Montserrat px-4 py-2 col-span-2 border flex justify-between" href="#">Перейти в магазин
+                        <div class="grid lg:grid-cols-3">
+                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
                                 <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                                     <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
                                     <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <span class="text-xl justify-self-end self-end">3 000 руб.</span>
+                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
                         </div>
                     </div>
                     <div class="col-start-2">
                         <div class="pb-4">
                             <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
                         </div>
-                        <div class="pb-10">
-                            <p>Футболка мужская</p>
+                        <div class="pb-4 md:pb-6 lg:pb-10">
+                            <p class="text-base">Футболка мужская</p>
                         </div>
-                        <div class="grid grid-cols-3">
-                            <a class="ff-Montserrat px-4 py-2 col-span-2 border flex justify-between" href="#">Перейти в магазин
+                        <div class="grid lg:grid-cols-3">
+                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
                                 <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                                     <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
                                     <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <span class="text-xl justify-self-end self-end">3 000 руб.</span>
+                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
                         </div>
                     </div>
                     <div>
                         <div class="pb-4">
                             <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
                         </div>
-                        <div class="pb-10">
-                            <p>Футболка мужская</p>
+                        <div class="pb-4 md:pb-6 lg:pb-10">
+                            <p class="text-base">Футболка мужская</p>
                         </div>
-                        <div class="grid grid-cols-3">
-                            <a class="ff-Montserrat px-4 py-2 col-span-2 border flex justify-between" href="#">Перейти в магазин
+                        <div class="grid lg:grid-cols-3">
+                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
                                 <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                                     <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
                                     <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <span class="text-xl justify-self-end self-end">3 000 руб.</span>
+                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
                         </div>
                     </div>
                     <div>
                         <div class="pb-4">
                             <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
                         </div>
-                        <div class="pb-10">
-                            <p>Футболка мужская</p>
+                        <div class="pb-4 md:pb-6 lg:pb-10">
+                            <p class="text-base">Футболка мужская</p>
                         </div>
-                        <div class="grid grid-cols-3">
-                            <a class="ff-Montserrat px-4 py-2 col-span-2 border flex justify-between" href="#">Перейти в магазин
+                        <div class="grid lg:grid-cols-3">
+                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
                                 <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                                     <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
                                     <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <span class="text-xl justify-self-end self-end">3 000 руб.</span>
+                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
                         </div>
                     </div>
                     <div>
                         <div class="pb-4">
                             <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
                         </div>
-                        <div class="pb-10">
-                            <p>Футболка мужская</p>
+                        <div class="pb-4 md:pb-6 lg:pb-10">
+                            <p class="text-base">Футболка мужская</p>
                         </div>
-                        <div class="grid grid-cols-3">
-                            <a class="ff-Montserrat px-4 py-2 col-span-2 border flex justify-between" href="#">Перейти в магазин
+                        <div class="grid lg:grid-cols-3">
+                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
                                 <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                                     <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
                                     <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
-                            <span class="text-xl justify-self-end self-end">3 000 руб.</span>
+                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
                         </div>
                     </div>
                 </div>
@@ -804,6 +804,5 @@
                 </div>
             </div>
         </section>
-
     </main>
 @endsection

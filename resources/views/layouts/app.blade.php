@@ -31,11 +31,11 @@
 	@yield('content')
 	<!-- Site footer -->
 	<footer class="pt-24 pb-8">
-		<div class="border-t border-b mb-8">
+		<div class="border-t lg:border-b mb-8">
 			<div class="container">
-				<div class="grid grid-cols-5 gap-8">
-					<div class="border-r py-8 col-span-2">
-						<p class="text-2xl uppercase pb-12">Александр Жук</p>
+				<div class="grid lg:grid-cols-5 gap-8">
+					<div class="lg:border-r py-8 lg:col-span-2">
+						<p class="text-base lg:text-base xl:text-lg 3xl:text-2xl uppercase pb-12">Александр Жук</p>
 						<div class="opacity-50 ff-Montserrat text-xs">
 							<p><a href="#">Политика конфидициальности</a></p>
 							<p>Copyright ©2023</p>
@@ -48,7 +48,7 @@
 							<p class="pb-4"><a href="#">Для всех</a></p>
 						</div>
 					</div>
-					<div class="py-8">
+					<div class="py-8 ">
 						<p class="uppercase pb-8 font-medium">Информация</p>
 						<div class="opacity-50">
 							<p class="pb-4"><a href="#">Обо мне</a></p>
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="grid grid-cols-5 gap-8">
+			<div class="grid lg:grid-cols-5 gap-8">
 				<div class="flex flex-col">
 					<div><p class="font-medium pb-8">Соцсети</p></div>
 					<div class="flex gap-5">
@@ -71,7 +71,7 @@
 						<a href="#"><img src="{{ asset('template/images/tiktok.svg') }}" alt=""></a>
 					</div>
 				</div>
-				<div class="col-start-3">
+				<div class="lg:col-start-3">
 					<div><p class="font-medium pb-8">Команда<br>разработчиков</p></div>
 				</div>
 				<div>
