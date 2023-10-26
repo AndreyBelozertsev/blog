@@ -20,35 +20,35 @@ class NavigationSeeder extends Seeder
         $items = [
             [
                 'title' => 'Обо мне',
-                'url' => '/about',
+                'url' => '#about',
                 'type' => 'top',
                 'status' => 1,
                 'sort' => 100
             ],
             [
                 'title' => 'Как стать моряком',
-                'url' => '/sailor',
+                'url' => '#sailor',
                 'type' => 'top',
                 'status' => 1,
                 'sort' => 200
             ],
             [
                 'title' => 'Как стать блогером',
-                'url' => '/blogger',
+                'url' => '#bloger',
                 'type' => 'top',
                 'status' => 1,
                 'sort' => 300
             ],
             [
                 'title' => 'Telegram канал',
-                'url' => '/telegram',
+                'url' => '#telegram',
                 'type' => 'top',
                 'status' => 1,
                 'sort' => 400
             ],
             [
                 'title' => 'Магазин',
-                'url' => '/shop',
+                'url' => '#shop',
                 'type' => 'top',
                 'status' => 1,
                 'sort' => 500

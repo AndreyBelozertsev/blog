@@ -33,8 +33,8 @@
 	<footer class="pt-24 pb-8">
 		<div class="border-t lg:border-b mb-8">
 			<div class="container">
-				<div class="grid lg:grid-cols-5 gap-8">
-					<div class="lg:border-r py-8 lg:col-span-2">
+				<div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
+					<div class="hidden lg:block lg:border-r py-8 lg:col-span-2">
 						<p class="text-base lg:text-base xl:text-lg 3xl:text-2xl uppercase pb-12">Александр Жук</p>
 						<div class="opacity-50 ff-Montserrat text-xs">
 							<p><a href="#">Политика конфидициальности</a></p>
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="grid lg:grid-cols-5 gap-8">
+			<div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
 				<div class="flex flex-col">
 					<div><p class="font-medium pb-8">Соцсети</p></div>
 					<div class="flex gap-5">
@@ -81,6 +81,12 @@
 				<div>
 					<div><p class="font-medium pb-3">Разработка</p> </div>
 					<p class="pb-4 opacity-50"><a href="#">компания "Ракурс"</a></p>
+				</div>
+			</div>
+			<div class="md:hidden py-8">
+				<div class="opacity-50 ff-Montserrat text-xs">
+					<p><a href="#">Политика конфидициальности</a></p>
+					<p>Copyright ©2023</p>
 				</div>
 			</div>
 		</div>

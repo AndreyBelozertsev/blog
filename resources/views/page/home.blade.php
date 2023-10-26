@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <main class="pt-24">
-        <section class="pb-44">
+    <main class="xl:pt-14">
+        <section class="pb-28">
             <div class="container">
                 <div class="grid grid-cols-5 gap-8">
                     <div class="pt-4 md:pt-24 col-span-5 md:col-span-3 hidden md:block z-10">
@@ -73,7 +73,8 @@
                 </div>
             </div>
         </section>
-        <section class="pb-20 md:pb-36">
+        <section class="ankor md:pb-30 xl:pb-44" id="about"></section>
+        <section>
             <div class="container">
                 <div class="pb-16 md:pb-20">
                     <h2 class="text-base px-2 font-thin border-r border-l w-fit text-accentSecondary border-accentSecondary">Обо мне</h2>
@@ -107,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-3 lg:grid-cols-4 pb-20 md:pb-28 gap-8 md:gap-4">
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 pb-8 md:pb-28 gap-8 md:gap-4">
                     <div>
                         <img src="{{ asset('template/images/2-1.jpg') }}" alt="">
                     </div>
@@ -126,18 +127,19 @@
                 </div>
             </div>
         </section>
+        <section class="ankor pb-20 md:pb-36" id="sailor"></section>
         <section class="pb-20 md:pb-36">
             <div class="container">
-                <div class="md:grid grid-cols-5 pb-24 gap-36">
+                <div class="md:grid grid-cols-5 pb-16 md:pb-24 gap-36">
                     <div class="col-span-4 col-start-2">
                         <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Как стать моряком?</h2>
                     </div>
                 </div>
-                <div class="flex flex-wrap lg:grid grid-cols-5 gap-20 lg:gap-36 overflow-hidden">
+                <div class="flex flex-wrap lg:grid grid-cols-5 gap-8 lg:gap-36 overflow-hidden">
                     <div class="xl:col-start-2 col-span-3 xl:col-span-2 lg:max-h-[400px]">
                         <div class="ff-Montserrat pb-10 md:pb-14">
                             <p class="text-lg md:text-2xl font-medium pb-8">Ежедневно получаю этот вопрос от подписчиков</p>
-                            <p class="text-sm md:text-base pb-8">Обо всём, что поможет вам определится с выбором профессии и специальности, о зарплатах, карьерном росте подробно рассказываю в своём видеоруководстве.</p>
+                            <p class="text-sm md:text-base md:pb-8">Обо всём, что поможет вам определится с выбором профессии и специальности, о зарплатах, карьерном росте подробно рассказываю в своём видеоруководстве.</p>
                         </div>
                         <div class="hidden lg:flex justify-center items-center">
                             <img class="max-h-fit w-full" src="{{ asset('template/images/3-1.jpg') }}" alt="">
@@ -214,7 +216,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section>
             <div class="container">
                 <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4">
                     <div class="hidden xl:block 2xl:col-span-1">
@@ -258,9 +260,10 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section class="ankor pb-20 md:pb-36" id="bloger"></section>
+        <section class="pb-20 md:pb-36">
             <div class="container">
-                <div class="md:grid grid-cols-5 pb-24">
+                <div class="md:grid grid-cols-5 pb-16 md:pb-24 ">
                     <div class="col-span-4 col-start-2">
                         <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Как стать блогером?</h2>
                     </div>
@@ -280,7 +283,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section class="pb-20 md:pb-36">
             <div class="container">
                 <div class="grid md:grid-cols-9 gap-8">
                     <div class="md:col-span-6 2xl:col-span-4 2xl:col-start-3 flex flex-col xl:justify-end lg:px-20 order-2 md:order-1">
@@ -294,7 +297,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section class="pb-20 md:pb-36">
             <div class="container">
                 <div class="flex flex-wrap justify-center">
                     <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
@@ -354,7 +357,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section class="pb-20 md:pb-36">
             <div class="container">
                 <div class="md:grid grid-cols-5 pb-24">
                     <div class="col-span-4 col-start-2">
@@ -419,9 +422,9 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section>
             <div class="container">
-                <div class="grid md:grid-cols-5 pb-24 gap-36">
+                <div class="grid md:grid-cols-5 pb-16 md:pb-24 gap-36">
                     <div class="md:col-span-4 md:col-start-2">
                         <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Консультация со мной</h2>
                     </div>
@@ -432,27 +435,67 @@
                     </div>
                     <div class="sm:col-span-2 flex flex-col justify-center order-3 lg:order-2">
                         <p class="ff-Montserrat pb-20">Подойдёт для тех, кому достаточно разовой консультации о профессии моряка или о блогерстве</p>
-                        <form action="">
+                        <form id="contact-form">
                             <div class="pb-6">
-                                <input class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" type="text" placeholder="Имя">
+                                <input name="phone" class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" type="text" placeholder="Имя">
+                                <span class="text-red-600 text-sm invalid-feedback" id="name-error"></span>
                             </div>
                             <div class="pb-6">
-                                <input class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" type="phone" placeholder="Телефон">
+                                <input name="phone" class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" type="phone" placeholder="Телефон">
+                                <span class="text-red-600 text-sm invalid-feedback" id="phone-error"></span>
                             </div>
                             <div class="pb-6">
-                                <textarea class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" name="" id="" rows="2" placeholder="Комментарий"></textarea>
+                                <textarea name="message" class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" name="" id="" rows="2" placeholder="Комментарий"></textarea>
+                                <span class="text-red-600 text-sm invalid-feedback" id="message-error"></span>
                             </div>  
                             <div class="pb-12">
-                                <label class="ff-Montserrat focus:outline-none"><input type="checkbox" class="absolute -z-10 opacity-0 block w-0 h-0 group"> <span class="opacity-50 inline-block relative pl-8 before:inline-block before:content-[''] before:w-5 before:h-5 before:absolute before:left-0 before:top-0 before:bg-[url('{{ asset('template/images/check.svg') }}')] before:rounded-full before:border-2 before:bg-no-repeat group-w-4:checked">Отправляя заявку вы соглашаетесь с Политикой конфиденциальности</span></label>
-                            </div>  
+                                <label class="ff-Montserrat focus:outline-none">
+                                    <input type="checkbox" 
+                                        name="agree"
+                                        class="appearance-none 
+                                            absolute 
+                                            bg-transparent 
+                                            rounded-full h-5 w-5 
+                                            cursor-pointer
+                                            transition-all
+                                            inline-flex 
+                                            text-center 
+                                            justify-center 
+                                            border-2 
+                                            bg-no-repeat
+                                            items-center 
+                                            opacity-50
+                                            checked:after:border-b-[3px] 
+                                            checked:after:border-white
+                                            checked:after:border-r-[3px]
+                                            checked:after:rotate-45
+                                            checked:after:rounded-sm
+                                            after:h-3 after:w-2
+                                            after:absolute 
+                                            after:text-xl 
+                                            after:text-white"
+                                    >
+                                    <span class="opacity-50 inline-block relative pl-8">Отправляя заявку вы соглашаетесь с Политикой конфиденциальности</span></label>
+                            </div>
+                            <span class="text-red-600 text-sm invalid-feedback" id="agree-error"></span>
+                            <div class="hidden" id="preloader">
+                                <div role="status">
+                                    <svg aria-hidden="true" class="mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-primary-blue" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                                        <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                                    </svg>
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="response"></div> 
                             <div>
-                                <a class="ff-Montserrat text-center text-lg py-6 bg-accent leading-none px-4 justify-between" href="#"><span class="pr-4">Получить консультацию</span>
+                                <button type="submit" class="ff-Montserrat text-center text-lg py-6 bg-accent leading-none px-4 justify-between" href="#"><span class="pr-4">Получить консультацию</span>
                                     <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15.9687 11.1881L15.9687 4.03116L12.3349 7.68389C13.6616 6.35013 15.9389 7.27978 15.9533 9.16098L15.9687 11.1881Z" fill="white"/>
                                         <path d="M15.9687 4.03116H11.1974H8.81176L10.827 4.03845C12.7252 4.04532 13.6736 6.33819 12.3349 7.68389L15.9687 4.03116Z" fill="white"/>
                                         <path d="M5.55424 14.4456L12.3349 7.68389M15.9687 4.03116L11.1974 4.03116L8.81176 4.03116M15.9687 4.03116L15.9687 11.1881M15.9687 4.03116L12.3349 7.68389M6.42612 4.03116L8.81176 4.03116M15.9687 13.5737L15.9687 11.1881M8.81176 4.03116L10.827 4.03845C12.7252 4.04532 13.6736 6.33819 12.3349 7.68389V7.68389M15.9687 11.1881L15.9533 9.16098C15.9389 7.27978 13.6616 6.35013 12.3349 7.68389V7.68389" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                     </svg>
-                                </a>
+                                </button>
                             </div>   
                         </form>
                     </div>
@@ -468,14 +511,15 @@
 
             </div>
         </section>
-        <section class="pb-36">
+        <section class="ankor pb-20 md:pb-36" id="telegram"></section>
+        <section class="pb-20 md:pb-36">
             <div class="container">
-                <div class="md:grid grid-cols-5 pb-24">
+                <div class="md:grid grid-cols-5 pb-16 md:pb-24">
                     <div class="col-span-4 col-start-2">
                         <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight">Эксклюзивный<br><span class="font-medium md:ml-40">Telegram-канал</span></h2>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-36">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pb-6 md:pb-36">
                     <div class="md:col-span-2">
                         <img class="w-full" src="{{ asset('template/images/10-1.jpg') }}">
                     </div>
@@ -514,7 +558,7 @@
                         <img class="w-full" src="{{ asset('template/images/10-7.jpg') }}">
                     </div>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-24">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 pb-6 md:pb-24">
                     <div class="order-1">
                         <img class="w-full" src="{{ asset('template/images/10-8.jpg') }}">
                     </div>
@@ -538,9 +582,9 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section >
             <div class="container">
-                <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4">
+                <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4 mb-8 md:mb-0">
                     <div class="hidden xl:block">
                         <img src="{{ asset('template/images/8-1.jpg') }}" alt="">
                     </div>
@@ -583,169 +627,84 @@
                 </div>
             </div>
         </section>
-        <section class="pb-36">
+        <section class="ankor pb-20 md:pb-36" id="shop"></section>
+        <section class="pb-20 md:pb-36">
             <div class="container">
-                <div class="md:grid grid-cols-5 pb-24">
+                <div class="md:grid grid-cols-5 pb-16 md:pb-24">
                     <div class="col-span-4 col-start-2">
                         <h2 class="text-xl md:text-2xl xl:text-4xl 3xl:text-6xl uppercase font-extralight relative">Эксклюзивный<br><span class="font-medium md:ml-40 xl:ml-60 3xl:ml-72">магазин</span><span class="hidden md:inline opacity-50 absolute ff-Montserrat font-medium bottom-10 lowercase text-base text-sm lg:text-base xl:text-lg 3xl:text-2xl">@papazzhuk</span></h2>
                     </div>
                 </div>
-                <div class="lg:grid grid-cols-5 pb-24">
+                <div class="lg:grid grid-cols-5 pb-12 md:pb-20">
                     <div class="col-span-3 xl:col-span-2 col-start-2 xl:col-start-3">
                         <p class="text-base lg:text-base xl:text-lg 3xl:text-2xl">Неповторимый ассортимент <span class="opacity-50">одежды, аксессуаров и коллекционных предметов</span>, которые отражают стиль и уникальность моего блога</p>
                     </div>
                 </div>
-                <div class="flex gap-4 pb-8 border-b">
-                    <button class="text-lg 2xl:text-xl font-medium ff-Montserrat px-6 md:px-8 2xl:px-10 py-3 md:py-4 2xl:py-5 border opacity-50">
-                        Для детей
-                    </button>
-                    <button class="text-lg 2xl:text-xl font-medium ff-Montserrat px-6 md:px-8 2xl:px-10 py-3 md:py-4 2xl:py-5 border">
-                        Для всех
-                    </button>
-                </div>
-                <div class="flex flex-wrap gap-4 pt-8 pb-24">
-                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
-                        Печатная продукция
-                    </button>
-                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
-                       Сувениры
-                    </button>
-                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border">
-                       Одежда
-                    </button>
-                    <button class="text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
-                       Книга
-                    </button>
-                </div>
-                <div class="grid xs:grid-cols-2 lg:grid-cols-3 pb-24 gap-6">
-                    <div>
-                        <div class="pb-4">
-                            <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
+          
+                <ul class="flex gap-4 pb-8 border-b tab-group-button">
+                    <li role="presentation">
+                        <button data-tab="child-shop" data-tab-group="shop-parent" class="custom-tab-item text-lg 2xl:text-xl font-medium ff-Montserrat px-6 md:px-8 2xl:px-10 py-3 md:py-4 2xl:py-5 border opacity-50 active"
+                            type="button"
+                            >
+                            Для детей
+                        </button>
+                    </li>
+                    <li role="presentation">
+                        <button data-tab="all-shop" data-tab-group="shop-parent" class="custom-tab-item text-lg 2xl:text-xl font-medium ff-Montserrat px-6 md:px-8 2xl:px-10 py-3 md:py-4 2xl:py-5 border opacity-50"
+                             type="button"
+                            >
+                            Для всех
+                        </button>
+                    </li>
+                </ul>
+
+                <div id="shop-parent-tabs-group">
+                    <div data-tab-content="child-shop-tab" class="tab-content-block">
+                        <div class="flex flex-wrap gap-4 pt-8 pb-24 tab-group-button">
+                            <button data-tab="print-shop" data-tab-group="shop-child-1" class="custom-tab-item active text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Печатная продукция
+                            </button>
+                            <button data-tab="souvenir-shop" data-tab-group="shop-child-1" class="custom-tab-item text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Сувениры
+                            </button>
+                            <button data-tab="clothes-shop" data-tab-group="shop-child-1" class="custom-tab-item text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Одежда
+                            </button>
+                            <button data-tab="book-shop" data-tab-group="shop-child-1" class="custom-tab-item text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Книга
+                            </button>
                         </div>
-                        <div class="pb-4 md:pb-6 lg:pb-10">
-                            <p class="text-base">Футболка мужская</p>
-                        </div>
-                        <div class="grid lg:grid-cols-3">
-                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
-                                <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
-                                    <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
-                                    <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="pb-4">
-                            <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
-                        </div>
-                        <div class="pb-4 md:pb-6 lg:pb-10">
-                            <p class="text-base">Футболка мужская</p>
-                        </div>
-                        <div class="grid lg:grid-cols-3">
-                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
-                                <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
-                                    <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
-                                    <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
+                        <div id="shop-child-1-tabs-group">
+                            <x-products-list hidden="" tab_id="print-shop-tab" title="Печатная продукция" />
+                            <x-products-list hidden="hidden" tab_id="souvenir-shop-tab" title="Сувенирная продукция" />
+                            <x-products-list hidden="hidden" tab_id="clothes-shop-tab" title="Одежда" />
+                            <x-products-list hidden="hidden" tab_id="book-shop-tab" title="Книжная продукция" />
                         </div>
                     </div>
-                    <div>
-                        <div class="pb-4">
-                            <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
+                    <div data-tab-content="all-shop-tab" class="tab-content-block hidden">
+                        <div class="flex flex-wrap gap-4 pt-8 pb-24 tab-group-button">
+                            <button data-tab="print-shop" data-tab-group="shop-child-2" class="custom-tab-item active text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Общая печатная продукция
+                            </button>
+                            <button data-tab="souvenir-shop" data-tab-group="shop-child-2" class="custom-tab-item text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Общие сувениры
+                            </button>
+                            <button data-tab="clothes-shop" data-tab-group="shop-child-2" class="custom-tab-item text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Общая одежда
+                            </button>
+                            <button data-tab="book-shop" data-tab-group="shop-child-2" class="custom-tab-item text-sm md:text-base font-medium ff-Montserrat px-4 py-2 border opacity-50">
+                                Общие книги
+                            </button>
                         </div>
-                        <div class="pb-4 md:pb-6 lg:pb-10">
-                            <p class="text-base">Футболка мужская</p>
-                        </div>
-                        <div class="grid lg:grid-cols-3">
-                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
-                                <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
-                                    <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
-                                    <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
-                        </div>
-                    </div>
-                    <div class="col-start-2">
-                        <div class="pb-4">
-                            <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
-                        </div>
-                        <div class="pb-4 md:pb-6 lg:pb-10">
-                            <p class="text-base">Футболка мужская</p>
-                        </div>
-                        <div class="grid lg:grid-cols-3">
-                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
-                                <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
-                                    <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
-                                    <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="pb-4">
-                            <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
-                        </div>
-                        <div class="pb-4 md:pb-6 lg:pb-10">
-                            <p class="text-base">Футболка мужская</p>
-                        </div>
-                        <div class="grid lg:grid-cols-3">
-                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
-                                <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
-                                    <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
-                                    <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="pb-4">
-                            <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
-                        </div>
-                        <div class="pb-4 md:pb-6 lg:pb-10">
-                            <p class="text-base">Футболка мужская</p>
-                        </div>
-                        <div class="grid lg:grid-cols-3">
-                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
-                                <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
-                                    <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
-                                    <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="pb-4">
-                            <img src="{{ asset('template/images/11-1.jpg') }}" alt="">
-                        </div>
-                        <div class="pb-4 md:pb-6 lg:pb-10">
-                            <p class="text-base">Футболка мужская</p>
-                        </div>
-                        <div class="grid lg:grid-cols-3">
-                            <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
-                                <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
-                                    <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>
-                                    <path d="M5.55424 14.4461L12.3349 7.68437M15.9687 4.03165L11.1974 4.03165L8.81176 4.03165M15.9687 4.03165L15.9687 11.1886M15.9687 4.03165L12.3349 7.68437M6.42612 4.03165L8.81176 4.03165M15.9687 13.5742L15.9687 11.1886M8.81176 4.03165L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437V7.68437M15.9687 11.1886L15.9533 9.16147C15.9389 7.28027 13.6616 6.35062 12.3349 7.68437V7.68437" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            <span class="text-sm lg:text-lg 2xl:text-xl lg:justify-self-end lg:self-end order-1 lg:order-2 pb-2 lg:pb-0">3 000 руб.</span>
+                        <div id="shop-child-2-tabs-group">
+                            <x-products-list hidden="" tab_id="print-shop-tab" title="Общ Печатная продукция" />
+                            <x-products-list hidden="hidden" tab_id="souvenir-shop-tab" title="Общ Сувенирная продукция" />
+                            <x-products-list hidden="hidden" tab_id="clothes-shop-tab" title="Общ Одежда" />
+                            <x-products-list hidden="hidden" tab_id="book-shop-tab" title="Общ Книжная продукция" />
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-center ff-Montserrat">
+                <!-- <div class="flex justify-center ff-Montserrat">
                     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
                         <div class="flex justify-between flex-1 sm:hidden">
                 
@@ -801,7 +760,45 @@
                             </div>
                         </div>
                     </nav>
+                </div> -->
+                
+
+<!-- 
+                <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                        <li class="mr-2" role="presentation">
+                            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="mr-2" role="presentation">
+                            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Dashboard</button>
+                        </li>
+                        <li class="mr-2" role="presentation">
+                            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Settings</button>
+                        </li>
+                        <li role="presentation">
+                            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Contacts</button>
+                        </li>
+                    </ul>
                 </div>
+                <div id="myTabContent">
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">1This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Profile tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                    </div>
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">2This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Dashboard tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                    </div>
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">3This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                    </div>
+                    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                        <p class="text-sm text-gray-500 dark:text-gray-400">4This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
+                    </div>
+                </div> -->
+
+
+
+
+
             </div>
         </section>
     </main>
