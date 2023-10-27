@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Str;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ConsultationFormRequest extends FormRequest
@@ -9,20 +10,35 @@ class ConsultationFormRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
+
+    public function rules()
     {
-        return false;
+        return [
+            'name' => ['required','min:3'],
+            'phone' => ['required','digits_between:11,13'],
+            'message' => ['sometimes','string','nullable'],
+            'agree' => ['required'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Поле обязательное для ввода',
+            'name.min' => 'Минимальный размер 3 символа',
+            'phone.required' => 'Поле обязательное для ввода',
+            'agree.required' => 'Вы должны согласиться с политикой обработки персональных данных',
+        ];
     }
 
     /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * Prepare the data for validation.
      */
-    public function rules(): array
+    protected function prepareForValidation(): void
     {
-        return [
-            //
-        ];
+        
+        $this->merge([
+            'phone' => Str::phoneNumber($this->phone),
+        ]);
     }
 }

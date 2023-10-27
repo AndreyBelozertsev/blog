@@ -30,7 +30,7 @@
                 <p class="text-base">{{ $product['title'] }}</p>
             </div>
             <div class="grid lg:grid-cols-3">
-                <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="#">Перейти в магазин
+                <a class="ff-Montserrat text-sm md:text-base px-4 py-2 lg:col-span-2 border flex justify-between order-2 lg:order-1" href="https://www.wildberries.ru/">Перейти в магазин
                     <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15.9687 11.1886L15.9687 4.03165L12.3349 7.68437C13.6616 6.35062 15.9389 7.28027 15.9533 9.16147L15.9687 11.1886Z" fill="white"/>
                         <path d="M15.9687 4.03165H11.1974H8.81176L10.827 4.03894C12.7252 4.04581 13.6736 6.33868 12.3349 7.68437L15.9687 4.03165Z" fill="white"/>

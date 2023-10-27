@@ -11,9 +11,10 @@ class AppRegistrar implements RouteRegistrar
 {
     public function map(Registrar $registrar):void
     {
-        Route::middleware('web')->group(function () {
-            Route::get('/', [HomeController::class, 'index'])->name('home'); 
-        });
+
+        Route::get('/', [HomeController::class, 'index'])->name('home'); 
+
+        Route::post('/contact-form', [HomeController::class, 'sendForm'])->name('sendForm'); 
 
     }
 }
