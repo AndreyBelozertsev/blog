@@ -5,7 +5,7 @@
         <section class="pb-28">
             <div class="container">
                 <div class="grid grid-cols-5 gap-8">
-                    <div class="pt-4 md:pt-24 col-span-5 md:col-span-3 hidden md:block z-10" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
+                    <div class="pt-4 md:pt-24 col-span-5 md:col-span-3 hidden md:block z-10 " data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
                         <p class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-light relative leading-tight">ОФИЦИАЛЬНЫЙ САЙТ<span class="absolute pl-4 opacity-50 text-sm md:text-base lg:text-base xl:text-lg 3xl:text-2xl md:-top-4">@papazzhuk</span></p>
                         <p class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-medium md:text-right relative leading-tight">АЛЕКСАНДРА<br><span class="md:absolute -right-24">ЖУКА<span></p>
                     </div>
