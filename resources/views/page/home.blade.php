@@ -5,12 +5,12 @@
         <section class="pb-28">
             <div class="container">
                 <div class="grid grid-cols-5 gap-8">
-                    <div class="pt-4 md:pt-24 col-span-5 md:col-span-3 hidden md:block z-10">
+                    <div class="pt-4 md:pt-24 col-span-5 md:col-span-3 hidden md:block z-10" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1000">
                         <p class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-light relative leading-tight">ОФИЦИАЛЬНЫЙ САЙТ<span class="absolute pl-4 opacity-50 text-sm md:text-base lg:text-base xl:text-lg 3xl:text-2xl md:-top-4">@papazzhuk</span></p>
                         <p class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 3xl:text-6xl font-medium md:text-right relative leading-tight">АЛЕКСАНДРА<br><span class="md:absolute -right-24">ЖУКА<span></p>
                     </div>
                     <div class="relative pt-24 col-span-5 md:col-span-2 md:row-span-3 order-1">
-                        <div class="">
+                        <div>
                             <img src="{{ asset('template/images/1-1.png') }}" alt="">
                         </div>
                         <div class="absolute -bottom-2 md:hidden bg-gradient-to-t from-brand via-brand to-transparent h-fit w-full pb-8 pt-16 px-4">
@@ -74,7 +74,7 @@
             </div>
         </section>
         <section class="ankor md:pb-30 xl:pb-44" id="about"></section>
-        <section>
+        <section data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="pb-16 md:pb-20">
                     <h2 class="text-base px-2 font-thin border-r border-l w-fit text-accentSecondary border-accentSecondary">Обо мне</h2>
@@ -108,7 +108,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid md:grid-cols-3 lg:grid-cols-4 pb-8 md:pb-28 gap-8 md:gap-4">
+                <div class="grid md:grid-cols-3 lg:grid-cols-4 pb-8 md:pb-28 gap-8 md:gap-4" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
                     <div>
                         <img src="{{ asset('template/images/2-1.jpg') }}" alt="">
                     </div>
@@ -128,7 +128,7 @@
             </div>
         </section>
         <section class="ankor pb-20 md:pb-36" id="sailor"></section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="md:grid grid-cols-5 pb-16 md:pb-24 gap-36">
                     <div class="col-span-4 col-start-2">
@@ -153,7 +153,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="xl:grid grid-cols-5 gap-10">
                     <div class="col-span-2 2xl:col-span-1">
@@ -177,16 +177,16 @@
                 </div>
             </div>
         </section>
-        <section class="pb-16 md:pb-24">
+        <section class="pb-16 md:pb-24" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="md:grid grid-cols-5">
-                    <div class="flex pb-10 sm:pb-16 md:pb-28 col-start-2 col-span-4">
+                    <div class="flex pb-10 sm:pb-16 md:pb-28 col-start-2 col-span-4" >
                         <p class="md:indent-[20%] text-lg md:text-2xl text-3xl  uppercase">Если вы мечтаете о карьере моряка<br>то это <span class="opacity-50">видеоруководство</span> - ваш первый шаг к<br>осуществлению этой <span class="opacity-50">мечты</span></p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class=" pb-24">
                     <h2 class="text-base px-2 font-thin border-r border-l w-fit text-accentSecondary border-accentSecondary">Ты получишь:</h2>
@@ -216,7 +216,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4">
                     <div class="hidden xl:block 2xl:col-span-1">
@@ -261,7 +261,7 @@
             </div>
         </section>
         <section class="ankor pb-20 md:pb-36" id="bloger"></section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="md:grid grid-cols-5 pb-16 md:pb-24 ">
                     <div class="col-span-4 col-start-2">
@@ -283,7 +283,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="grid md:grid-cols-9 gap-8">
                     <div class="md:col-span-6 2xl:col-span-4 2xl:col-start-3 flex flex-col xl:justify-end lg:px-20 order-2 md:order-1">
@@ -297,7 +297,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="flex flex-wrap justify-center">
                     <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 flex justify-center p-4 md:p-1 lg:p-0">
@@ -357,7 +357,7 @@
                 </div>
             </div>
         </section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="md:grid grid-cols-5 pb-24">
                     <div class="col-span-4 col-start-2">
@@ -422,7 +422,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="grid md:grid-cols-5 pb-16 md:pb-24 gap-36">
                     <div class="md:col-span-4 md:col-start-2">
@@ -503,7 +503,7 @@
             </div>
         </section>
         <section class="ankor pb-20 md:pb-36" id="telegram"></section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="md:grid grid-cols-5 pb-16 md:pb-24">
                     <div class="col-span-4 col-start-2">
@@ -573,7 +573,7 @@
                 </div>
             </div>
         </section>
-        <section >
+        <section data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="grid xl:grid-cols-3 2xl:grid-cols-5 gap-4 mb-8 md:mb-0">
                     <div class="hidden xl:block">
@@ -619,7 +619,7 @@
             </div>
         </section>
         <section class="ankor pb-20 md:pb-36" id="shop"></section>
-        <section class="pb-20 md:pb-36">
+        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="md:grid grid-cols-5 pb-16 md:pb-24">
                     <div class="col-span-4 col-start-2">
