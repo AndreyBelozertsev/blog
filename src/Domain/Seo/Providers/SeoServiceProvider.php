@@ -9,8 +9,9 @@ class SeoServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        Relation::enforceMorphMap([
+        Relation::morphMap([
             'page' => 'Domain\Page\Models\Page',
+            'category' => 'Domain\Product\Models\Category',
         ]);
     }
 

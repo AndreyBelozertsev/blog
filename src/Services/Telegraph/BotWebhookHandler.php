@@ -25,6 +25,7 @@ class BotWebhookHandler extends WebhookHandler
 
     public function handle(Request $request, \DefStudio\Telegraph\Models\TelegraphBot $bot): void
     {
+        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($request);
         parent::handle($request, $bot);
 
         if ($this->request->has('chat_join_request')) {

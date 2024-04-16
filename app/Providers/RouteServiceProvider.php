@@ -5,9 +5,11 @@ namespace App\Providers;
 use RuntimeException;
 use Illuminate\Http\Request;
 use App\Routing\AppRegistrar;
-use App\Routing\AuthRegistrar;
 use App\Routing\PageRegistrar;
+use App\Routing\OrderRegistrar;
+use App\Routing\ClientRegistrar;
 use App\Contracts\RouteRegistrar;
+use App\Routing\ProductRegistrar;
 use App\Routing\TelegramRegistrar;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -28,9 +30,11 @@ class RouteServiceProvider extends ServiceProvider
 
     protected array $registrars =[
         AppRegistrar::class,
-        AuthRegistrar::class,
+        ClientRegistrar::class,
+        OrderRegistrar::class,
         PageRegistrar::class,
         TelegramRegistrar::class,
+        ProductRegistrar::class,
     ];
 
     /**

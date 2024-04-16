@@ -21,6 +21,6 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        View::composer('*', NavigationComposer::class);
+        View::composer('partials.top-navigation-menu', NavigationComposer::class);
     }
 }

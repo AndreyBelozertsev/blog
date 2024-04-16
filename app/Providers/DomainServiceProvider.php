@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Domain\Seo\Providers\SeoServiceProvider;
-use Domain\Auth\Providers\AuthServiceProvider;
 use Domain\Page\Providers\PageServiceProvider;
+use Domain\Order\Providers\OrderServiceProvider;
+use Services\Telegraph\TelegraphServiceProvider;
+use Domain\Client\Providers\ClientServiceProvider;
 use Domain\Telegram\Providers\TelegramServiceProvider;
 
 
@@ -18,8 +20,9 @@ class DomainServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
         $this->app->register(
-            AuthServiceProvider::class
+            ClientServiceProvider::class
         );
 
         $this->app->register(
@@ -32,6 +35,14 @@ class DomainServiceProvider extends ServiceProvider
 
         $this->app->register(
             TelegramServiceProvider::class
+        );
+
+        $this->app->register(
+            TelegraphServiceProvider::class
+        );
+
+        $this->app->register(
+            OrderServiceProvider::class
         );
 
 
