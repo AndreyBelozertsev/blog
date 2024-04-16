@@ -65,7 +65,7 @@ class BotWebhookHandler extends WebhookHandler
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
                     ->row([
-                        Button::make('Оплатить')->action('pay'),
+                        Button::make('Тарифы')->action('pay'),
                         Button::make('Окончание подписки')->action('expire'),
                     ]);
             })->send();

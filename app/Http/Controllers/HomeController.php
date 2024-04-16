@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
 
         //$action(new NewCustomerDTO($request->validated()));
-        echo 123;
+
         return response()->json(['success'=>'Спасибо!</br>В ближайшее время мы свяжемся с вами'],200);
     }
 }
