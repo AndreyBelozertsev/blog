@@ -102,10 +102,9 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
         /** @var string $action */
         $action = $this->callbackQuery?->data()->get('action') ?? '';
-        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($action);
+
         if(Str::contains($action, 'tarif_')){
             $actionRaw = explode('_', $action);
-            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($action);
             $slug = $actionRaw[1];
             $this->tarif($slug);
             return;
@@ -124,9 +123,15 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
     public function tarif($slug): void
     {
-        $tarifs = TgTarif::active()->get();
-        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($slug);
-        $this->chat->message("Вы выбрали тарфиф на 30 дней. \nСсылка на оплату:")
+        $tarif = TgTarif::activeItem($slug)->first();
+        if(! $tarif){
+            $this->chat->message('К сожалению искомый тарфи отсутствует, выберите другой')
+                ->send();
+            $this->pay();
+            return;
+        }
+
+        $this->chat->message("Вы выбрали тарфиф: $tarif->title. \nСсылка на оплату:")
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
                     ->button('Оплатить')->url('https://ya.ru');
@@ -187,5 +192,4 @@ class BotWebhookHandler extends AbstractWebhookHandler
             })
             ->send();
     }
-
 }
