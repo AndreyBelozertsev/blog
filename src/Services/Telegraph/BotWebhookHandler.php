@@ -2,6 +2,7 @@
 namespace Services\Telegraph;
 
 
+use Domain\Product\Models\TgTarif;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Stringable;
@@ -18,6 +19,8 @@ use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
+
+use ReflectionMethod;
 
 
 class BotWebhookHandler extends WebhookHandler
@@ -74,13 +77,13 @@ class BotWebhookHandler extends WebhookHandler
 
     public function pay(): void
     {
+        $tarifs = TgTarif::active()->get();
         $this->chat->message('Выберите тариф:')
-            ->keyboard(function(Keyboard $keyboard){
-                return $keyboard
-                    ->button('30 дней')->action('tarif1')
-                    ->button('90 дней')->action('tarif2')
-                    ->button('180 дней')->action('tarif3')
-                    ->button('Тест')->action('testHook');
+            ->keyboard(function(Keyboard $keyboard) use($tarifs){
+                foreach($tarifs as $tarif){
+                    $keyboard->button($tarif->title)->action("tarif_$tarif->slug");
+                }
+                return $keyboard;
             })->send();
     }
 
@@ -89,8 +92,41 @@ class BotWebhookHandler extends WebhookHandler
         $this->chat->message('Ваша подписка оканчивается через хххх дней')->send();
     }
 
-    public function tarif1(): void
+    protected function handleCallbackQuery(): void
     {
+        
+        $this->extractCallbackQueryData();
+
+        if (config('telegraph.debug_mode')) {
+            Log::debug('Telegraph webhook callback', $this->data->toArray());
+        }
+
+        /** @var string $action */
+        $action = $this->callbackQuery?->data()->get('action') ?? '';
+
+        if(Str::contains($action, 'tarif_')){
+            $actionRaw = explode('_', $action);
+            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($action);
+            $slug = $actionRaw[1];
+            $this->tarif($slug);
+            return;
+        }
+
+        if (!$this->canHandle($action)) {
+            report(TelegramWebhookException::invalidAction($action));
+            $this->reply(__('telegraph::errors.invalid_action'));
+
+            return;
+        }
+
+        $this->$action();
+    }
+
+
+    public function tarif($slug): void
+    {
+        $tarifs = TgTarif::active()->get();
+        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($slug);
         $this->chat->message("Вы выбрали тарфиф на 30 дней. \nСсылка на оплату:")
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
@@ -99,26 +135,36 @@ class BotWebhookHandler extends WebhookHandler
             ->send();
     }
 
-    public function tarif2(): void
-    {
-        $this->chat->message("Вы выбрали тарфиф на 90 дней. \nСсылка на оплату:")
-            ->keyboard(function(Keyboard $keyboard){
-                return $keyboard
-                    ->button('Оплатить')->url('https://ya.ru');
-            })
-            ->send();
-    }
+    // public function tarif1(): void
+    // {
+    //     $this->chat->message("Вы выбрали тарфиф на 30 дней. \nСсылка на оплату:")
+    //         ->keyboard(function(Keyboard $keyboard){
+    //             return $keyboard
+    //                 ->button('Оплатить')->url('https://ya.ru');
+    //         })
+    //         ->send();
+    // }
 
-    public function tarif3(): void
-    {
+    // public function tarif2(): void
+    // {
+    //     $this->chat->message("Вы выбрали тарфиф на 90 дней. \nСсылка на оплату:")
+    //         ->keyboard(function(Keyboard $keyboard){
+    //             return $keyboard
+    //                 ->button('Оплатить')->url('https://ya.ru');
+    //         })
+    //         ->send();
+    // }
 
-        $this->chat->message("Вы выбрали тарфиф на 180 дней. \nСсылка на оплату:")
-            ->keyboard(function(Keyboard $keyboard){
-                return $keyboard
-                    ->button('Оплатить')->url('https://ya.ru');
-            })
-            ->send();
-    }
+    // public function tarif3(): void
+    // {
+
+    //     $this->chat->message("Вы выбрали тарфиф на 180 дней. \nСсылка на оплату:")
+    //         ->keyboard(function(Keyboard $keyboard){
+    //             return $keyboard
+    //                 ->button('Оплатить')->url('https://ya.ru');
+    //         })
+    //         ->send();
+    // }
 
     public function testHook(): void
     {

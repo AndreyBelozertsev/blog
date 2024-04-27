@@ -27,6 +27,7 @@ class LinkCategoryResource extends ModelResource
             Block::make([
                 Text::make('Заголовок','title'), 
                 Number::make('Порядок сортировки','sort'),
+                
                 Switcher::make('Статус', 'status')
             ]),
         ];

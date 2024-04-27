@@ -49,4 +49,9 @@ class TgTarif extends Model
         $this->{$this->slugColumn()} = $this->{$this->slugColumn()} ?? $slug;
       
     }
+
+    public function newEloquentBuilder($query): TgTarifQueryBuilder 
+    {
+        return new TgTarifQueryBuilder($query);
+    }
 }
