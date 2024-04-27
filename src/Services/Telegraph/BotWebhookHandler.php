@@ -17,13 +17,12 @@ use Services\Telegraph\Models\TelegraphChat;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
 use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
-use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 
 use ReflectionMethod;
 
 
-class BotWebhookHandler extends WebhookHandler
+class BotWebhookHandler extends AbstractWebhookHandler
 {
 
     public function handle(Request $request, \DefStudio\Telegraph\Models\TelegraphBot $bot): void
@@ -92,7 +91,7 @@ class BotWebhookHandler extends WebhookHandler
         $this->chat->message('Ваша подписка оканчивается через хххх дней')->send();
     }
 
-    private function handleCallbackQuery(): void
+    protected function handleCallbackQuery(): void
     {
         
         $this->extractCallbackQueryData();
