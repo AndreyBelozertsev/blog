@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
             PageSeeder::class,
             MoonShineSeeder::class,
             TgTarifSeeder::class,
-            OrderSeeder::class,
+            // OrderSeeder::class,
             CategorySeeder::class,
             LinkCategorySeeder::class,
             LinkCategorySeeder::class,
