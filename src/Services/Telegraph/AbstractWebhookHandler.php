@@ -227,12 +227,12 @@ abstract class AbstractWebhookHandler
             Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('message');
             /* @phpstan-ignore-next-line */
             $this->message = Message::fromArray($this->request->input('message'));
+            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($this->message);
 
             return;
         }
 
         if ($this->request->has('edited_message')) {
-            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('edited_message');
             /* @phpstan-ignore-next-line */
             $this->message = Message::fromArray($this->request->input('edited_message'));
             $this->handleMessage();
@@ -241,7 +241,6 @@ abstract class AbstractWebhookHandler
         }
 
         if ($this->request->has('channel_post')) {
-            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('channel_post');
             /* @phpstan-ignore-next-line */
             $this->message = Message::fromArray($this->request->input('channel_post'));
             $this->handleMessage();
@@ -251,14 +250,12 @@ abstract class AbstractWebhookHandler
 
 
         if ($this->request->has('callback_query')) {
-            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('callback_query');
             /* @phpstan-ignore-next-line */
             $this->callbackQuery = CallbackQuery::fromArray($this->request->input('callback_query'));
             $this->handleCallbackQuery();
         }
 
         if ($this->request->has('inline_query')) {
-            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('inline_query');
             /* @phpstan-ignore-next-line */
             $this->handleInlineQuery(InlineQuery::fromArray($this->request->input('inline_query')));
         }
