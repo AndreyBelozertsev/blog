@@ -227,8 +227,8 @@ abstract class AbstractWebhookHandler
             Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('message');
             /* @phpstan-ignore-next-line */
             $this->message = Message::fromArray($this->request->input('message'));
-            Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($this->message);
-
+            $this->handleMessage();
+            
             return;
         }
 
