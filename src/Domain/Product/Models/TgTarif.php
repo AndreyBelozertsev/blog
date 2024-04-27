@@ -6,6 +6,7 @@ use Support\Traits\HasSlug;
 use Support\Casts\PriceCast;
 use Support\Traits\ScopeActive;
 use Illuminate\Database\Eloquent\Model;
+use Domain\Product\QueryBuilders\TgTarifQueryBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class TgTarif extends Model
