@@ -92,7 +92,7 @@ class BotWebhookHandler extends WebhookHandler
         $this->chat->message('Ваша подписка оканчивается через хххх дней')->send();
     }
 
-    protected function handleCallbackQuery(): void
+    private function handleCallbackQuery(): void
     {
         
         $this->extractCallbackQueryData();
@@ -103,7 +103,6 @@ class BotWebhookHandler extends WebhookHandler
 
         /** @var string $action */
         $action = $this->callbackQuery?->data()->get('action') ?? '';
-        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('123123');
         Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($action);
         if(Str::contains($action, 'tarif_')){
             $actionRaw = explode('_', $action);
