@@ -140,50 +140,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
             ->send();
     }
 
-    // public function tarif1(): void
-    // {
-    //     $this->chat->message("Вы выбрали тарфиф на 30 дней. \nСсылка на оплату:")
-    //         ->keyboard(function(Keyboard $keyboard){
-    //             return $keyboard
-    //                 ->button('Оплатить')->url('https://ya.ru');
-    //         })
-    //         ->send();
-    // }
-
-    // public function tarif2(): void
-    // {
-    //     $this->chat->message("Вы выбрали тарфиф на 90 дней. \nСсылка на оплату:")
-    //         ->keyboard(function(Keyboard $keyboard){
-    //             return $keyboard
-    //                 ->button('Оплатить')->url('https://ya.ru');
-    //         })
-    //         ->send();
-    // }
-
-    // public function tarif3(): void
-    // {
-
-    //     $this->chat->message("Вы выбрали тарфиф на 180 дней. \nСсылка на оплату:")
-    //         ->keyboard(function(Keyboard $keyboard){
-    //             return $keyboard
-    //                 ->button('Оплатить')->url('https://ya.ru');
-    //         })
-    //         ->send();
-    // }
-
-    public function testHook(): void
-    {
-        $telegraphChat = TelegraphChat::where('chat_id', '-1001570080663')->first();
-
-        // $link = $telegraphChat->createInviteLink()    
-        //     ->withJoinRequest()      
-        //     ->send();
-        
-
-        $this->chat->message('https://t.me/+Ybl8epmC-qZiZDgy')
-            ->send();
-    }
-
     public function success(): void
     {
         $this->chat->message('Оплата прошла успешно')
