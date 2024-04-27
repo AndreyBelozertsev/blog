@@ -103,6 +103,7 @@ class BotWebhookHandler extends WebhookHandler
 
         /** @var string $action */
         $action = $this->callbackQuery?->data()->get('action') ?? '';
+        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info('123123');
         Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($action);
         if(Str::contains($action, 'tarif_')){
             $actionRaw = explode('_', $action);
