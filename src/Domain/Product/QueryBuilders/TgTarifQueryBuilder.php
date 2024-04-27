@@ -11,6 +11,6 @@ class TgTarifQueryBuilder extends Builder
     {
         return $this->active()
             ->where('slug', $slug)
-            ->select(['title','slug']);
+            ->select(['title','slug','price']);
     }
 }

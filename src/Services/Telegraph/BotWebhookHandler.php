@@ -125,7 +125,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
     {
         $tarif = TgTarif::activeItem($slug)->first();
         if(! $tarif){
-            $this->chat->message('К сожалению искомый тарфи отсутствует, выберите другой')
+            $this->chat->message('К сожалению искомый тариф отсутствует, выберите другой')
                 ->send();
             $this->pay();
             return;
