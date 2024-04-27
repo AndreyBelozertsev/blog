@@ -80,7 +80,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
         $this->chat->message('Выберите тариф:')
             ->keyboard(function(Keyboard $keyboard) use($tarifs){
                 foreach($tarifs as $tarif){
-                    $keyboard->button($tarif->title)->action("tarif_$tarif->slug");
+                    $keyboard->button($tarif->title)->action("tarif__$tarif->slug");
                 }
                 return $keyboard;
             })->send();
@@ -103,8 +103,8 @@ class BotWebhookHandler extends AbstractWebhookHandler
         /** @var string $action */
         $action = $this->callbackQuery?->data()->get('action') ?? '';
 
-        if(Str::contains($action, 'tarif_')){
-            $actionRaw = explode('_', $action);
+        if(Str::contains($action, 'tarif__')){
+            $actionRaw = explode('__', $action);
             $slug = $actionRaw[1];
             $this->tarif($slug);
             return;
