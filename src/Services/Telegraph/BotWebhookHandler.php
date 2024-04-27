@@ -109,7 +109,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
             $this->tarif($slug);
             return;
         }
-
+        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($action);
         if (!$this->canHandle($action)) {
             report(TelegramWebhookException::invalidAction($action));
             $this->reply(__('telegraph::errors.invalid_action'));
@@ -124,8 +124,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
     public function tarif($slug): void
     {
         $tarif = TgTarif::activeItem($slug)->first();
-        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($slug);
-        Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($tarif);
+
         if(!$tarif){
             $this->chat->message('К сожалению выбранный тариф сейчас недоступен, выберите другой')
                 ->send();
