@@ -57,6 +57,9 @@ class BotWebhookHandler extends AbstractWebhookHandler
     
     public function start(): void
     {
+
+        $this->setClient();
+        
         $this->chat->html("Добро пожаловать!
                 \nЭто бот канала Александра Жука. На канале Вы найдете: 
                 \n- эксклюзивные длинные видео в оригинальном качестве
@@ -148,5 +151,21 @@ class BotWebhookHandler extends AbstractWebhookHandler
                     ->button('Перейти в канал')->url('https://ya.ru');
             })
             ->send();
+    }
+
+
+    protected function setClient()
+    {
+
+        $this->chat->client()->updateOrCreate([
+            'telegraph_chat_id' => $this->chat->id
+            ],
+            [
+                'telegram_id' => $this->message->from()->id(),
+                'username' => $this->message->from()->username(),
+                'first_name' => $this->message->from()->firstName(),
+                'last_name' => $this->message->from()->lastName(),
+            ]
+        );
     }
 }

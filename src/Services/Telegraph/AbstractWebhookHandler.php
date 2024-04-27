@@ -9,21 +9,22 @@ namespace Services\Telegraph;
 
 
 
-use DefStudio\Telegraph\DTO\CallbackQuery;
-use DefStudio\Telegraph\DTO\Chat;
-use DefStudio\Telegraph\DTO\InlineQuery;
-use DefStudio\Telegraph\DTO\Message;
-use DefStudio\Telegraph\DTO\User;
-use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
-use DefStudio\Telegraph\Keyboard\Keyboard;
-use DefStudio\Telegraph\Models\TelegraphBot;
-use DefStudio\Telegraph\Models\TelegraphChat;
-use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
-use Illuminate\Support\Stringable;
 use ReflectionMethod;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
+use DefStudio\Telegraph\DTO\Chat;
+use DefStudio\Telegraph\DTO\User;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Stringable;
+
+use Illuminate\Support\Facades\Log;
+use DefStudio\Telegraph\DTO\Message;
+use DefStudio\Telegraph\DTO\InlineQuery;
+use DefStudio\Telegraph\DTO\CallbackQuery;
+use DefStudio\Telegraph\Keyboard\Keyboard;
+use Services\Telegraph\Models\TelegraphBot;
+use Services\Telegraph\Models\TelegraphChat;
+use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 abstract class AbstractWebhookHandler
@@ -228,7 +229,7 @@ abstract class AbstractWebhookHandler
             /* @phpstan-ignore-next-line */
             $this->message = Message::fromArray($this->request->input('message'));
             $this->handleMessage();
-            
+
             return;
         }
 
