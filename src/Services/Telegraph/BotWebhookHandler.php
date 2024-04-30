@@ -2,24 +2,25 @@
 namespace Services\Telegraph;
 
 
-use Domain\Product\Models\TgTarif;
+use ReflectionMethod;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Domain\Product\Models\TgTarif;
 use Illuminate\Support\Stringable;
 use Illuminate\Support\Facades\Log;
 use DefStudio\Telegraph\DTO\Message;
 use DefStudio\Telegraph\DTO\InlineQuery;
 use DefStudio\Telegraph\Keyboard\Button;
+use Domain\Telegram\Models\Subscription;
 use Services\Telegraph\DTO\ChatJoinQuery;
 use DefStudio\Telegraph\DTO\CallbackQuery;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use Services\Telegraph\Models\TelegraphChat;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
-use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
-use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 
-use ReflectionMethod;
+use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
+use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
 
 
 class BotWebhookHandler extends AbstractWebhookHandler
@@ -59,7 +60,9 @@ class BotWebhookHandler extends AbstractWebhookHandler
     {
 
         $this->setClient();
-        
+
+        $this->chat->client()->id;
+
         $this->chat->html("Добро пожаловать!
                 \nЭто бот канала Александра Жука. На канале Вы найдете: 
                 \n- эксклюзивные длинные видео в оригинальном качестве
@@ -68,11 +71,15 @@ class BotWebhookHandler extends AbstractWebhookHandler
                 \n- возможность поддержать мои новые проекты для вас"
             )
             ->keyboard(function(Keyboard $keyboard){
-                return $keyboard
+                $keyboard
                     ->row([
-                        Button::make('Тарифы')->action('pay'),
-                        Button::make('Окончание подписки')->action('expire'),
+                        Button::make('Тарифы')->action('pay')
                     ]);
+                if( Subscription::activeItem($this->chat->client()->id)->first() ){
+                    Button::make('Окончание подписки')->action('expire');
+                }
+
+                return $keyboard;
             })->send();
     }
 
@@ -158,7 +165,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
     {
 
         $this->chat->client()->updateOrCreate([
-            'telegraph_chat_id' => $this->chat->id
+                'telegraph_chat_id' => $this->chat->id
             ],
             [
                 'telegram_id' => $this->message->from()->id(),
