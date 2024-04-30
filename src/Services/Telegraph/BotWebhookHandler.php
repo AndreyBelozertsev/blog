@@ -61,7 +61,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
         $this->setClient();
 
-        $this->chat->client()->id;
+        $this->chat->client->id;
 
         $this->chat->html("Добро пожаловать!
                 \nЭто бот канала Александра Жука. На канале Вы найдете: 
