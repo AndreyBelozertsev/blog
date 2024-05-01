@@ -8,6 +8,6 @@ class TelegraphChat extends TelegraphChatOriginal
 {
     public function client()
     {
-        return $this->belongsTo(Client::class);
+        return $this->hasOne(Client::class);
     }
 }

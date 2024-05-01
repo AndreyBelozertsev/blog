@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->boolean('status')->default(true)->nullable();
+            $table->foreignIdFor(TelegraphChat::class)
+                ->constrained()
+                ->nullable();
             $table->timestamps();
         });
     }

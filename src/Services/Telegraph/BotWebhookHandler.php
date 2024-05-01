@@ -47,11 +47,14 @@ class BotWebhookHandler extends AbstractWebhookHandler
         $tg_user_id = $chatJoinQuery->from()->id();
         $client = Client::where('telegram_id', $tg_user_id)->whereHas('subscriptions', function($q){
             $q->activeItem(); 
-        })->first();
+        })
+        ->has('chat')
+        ->with('chat')
+        ->first();
 
         if($client){
             TelegraphCustomFacade::approveChatJoin( $chat_id, $tg_user_id)->send();
-            $telegraphChat = TelegraphChat::where('client_id', $client->id)->first();
+            $telegraphChat = $client->chat;
             $telegraphChat->html("Ваша заявка одобрена!"
             )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
                 return $keyboard
@@ -203,7 +206,5 @@ class BotWebhookHandler extends AbstractWebhookHandler
             ]
         );
 
-        $this->chat->client_id = $this->chat->client->id;
-        $this->chat->save();
     }
 }

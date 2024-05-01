@@ -26,9 +26,9 @@ class Client extends Model
         'telegraph_chat_id',
     ];
 
-    public function chats()
+    public function chat()
     {
-        return $this->hasMany(TelegraphChat::class);
+        return $this->belongsTo(TelegraphChat::class);
     }
 
     
