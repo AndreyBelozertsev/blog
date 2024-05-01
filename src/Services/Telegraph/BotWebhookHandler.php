@@ -103,9 +103,23 @@ class BotWebhookHandler extends AbstractWebhookHandler
     {
         if($subscription = Subscription::activeItem($this->chat->client->id)->first()){
             $this->chat->message('Ваша подписка оканчивается: ' . getHumanDate($subscription->expaire_at))->send();
-            return;
         }
-        $this->chat->message('У вас нет активной подписки')->send();
+        else{ 
+            $this->chat->message('У вас нет активной подписки')->send();
+        }
+        $this->chat->keyboard(function(Keyboard $keyboard){
+            $keyboard
+                ->row([
+                    Button::make('Тарифы')->action('pay'),
+                ]);
+            if( Subscription::activeItem($this->chat->client->id)->first() ){
+                $keyboard
+                ->row([
+                    Button::make('Окончание подписки')->action('expire')
+                ]);
+            }
+            return $keyboard;
+        })->send();
     }
 
     protected function handleCallbackQuery(): void
