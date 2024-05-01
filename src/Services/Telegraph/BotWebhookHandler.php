@@ -181,7 +181,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
             \nОтправляем Вам приглашение на закрытый канал, заявки принимаются автоматически!")
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
-                    ->button('Перейти в канал')->url('https://t.me/+Ybl8epmC-qZiZDgy');
+                    ->button('Перейти в канал')->url('https://t.me/+Hhk2cv4yI-tlMWYy');
             })
             ->send();
     }
