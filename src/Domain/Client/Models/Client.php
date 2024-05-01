@@ -5,6 +5,7 @@ namespace Domain\Client\Models;
 use Domain\Order\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 use Domain\Telegram\Models\Subscription;
+use Services\Telegraph\Models\TelegraphChat;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 

@@ -5,6 +5,7 @@ namespace Services\Telegraph;
 use ReflectionMethod;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Domain\Client\Models\Client;
 use Domain\Product\Models\TgTarif;
 use Illuminate\Support\Stringable;
 use Illuminate\Support\Facades\Log;
@@ -17,8 +18,8 @@ use DefStudio\Telegraph\DTO\CallbackQuery;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use Services\Telegraph\Models\TelegraphChat;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
-use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 
+use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
 
@@ -43,17 +44,20 @@ class BotWebhookHandler extends AbstractWebhookHandler
     protected function handleChatJoinQuery(ChatJoinQuery $chatJoinQuery): void
     {
         $chat_id = $chatJoinQuery->chat()->id();
-        $user_id = $chatJoinQuery->from()->id();
-        TelegraphCustomFacade::approveChatJoin( $chat_id, $user_id)->send();
+        $tg_user_id = $chatJoinQuery->from()->id();
+        $client = Client::where('telegram_id', $tg_user_id)->whereHas('subscriptions', function($q){
+            $q->activeItem(); 
+        })->first();
 
-        $telegraphChat = TelegraphChat::where('chat_id', '259548170')->first();
-  
-        $telegraphChat->html("Ваша заявка одобрена!"
-        )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
-            return $keyboard
-                ->button('В канал')->url('https://t.me/+Hhk2cv4yI-tlMWYy');
-        })->send();
-
+        if($client){
+            TelegraphCustomFacade::approveChatJoin( $chat_id, $tg_user_id)->send();
+            $telegraphChat = TelegraphChat::where('chat_id', $client->chat->id)->first();
+            $telegraphChat->html("Ваша заявка одобрена!"
+            )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
+                return $keyboard
+                    ->button('В канал')->url('https://t.me/+Hhk2cv4yI-tlMWYy');
+            })->send();
+        }
     }
     
     public function start(): void
