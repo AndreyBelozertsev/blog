@@ -270,7 +270,7 @@ abstract class AbstractWebhookHandler
     protected function setupChat(): void
     {
         $telegramChat = $this->message?->chat() ?? $this->callbackQuery?->message()?->chat();
-
+        
         assert($telegramChat !== null);
 
         /** @var TelegraphChat $chat */
