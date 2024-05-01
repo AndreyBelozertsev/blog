@@ -74,10 +74,12 @@ class BotWebhookHandler extends AbstractWebhookHandler
                 $keyboard
                     ->row([
                         Button::make('Тарифы')->action('pay'),
-                        Button::make($this->chat->client->id)->action('pay')
                     ]);
                 if( Subscription::activeItem($this->chat->client->id)->first() ){
-                    Button::make('Окончание подписки')->action('expire');
+                    $keyboard
+                    ->row([
+                        Button::make('Окончание подписки')->action('expire')
+                    ]);
                 }
 
                 return $keyboard;
