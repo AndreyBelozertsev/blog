@@ -13,6 +13,11 @@ class Subscription extends Model
 {
     use HasFactory, ScopeActive;
 
+    protected $fillable = [
+        'status',
+        'expaire_at'
+    ];
+
     public function client(): BelongsTo
     {
         return $this->belongsTo(Client::class);

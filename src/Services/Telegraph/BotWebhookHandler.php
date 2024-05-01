@@ -104,7 +104,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
         $this->chat->message('Выберите тариф:')
             ->keyboard(function(Keyboard $keyboard) use($tarifs){
                 foreach($tarifs as $tarif){
-                    $keyboard->button($tarif->title)->action("tarif__$tarif->slug");
+                    $keyboard->button($tarif->title . " - " . $tarif->price)->action("tarif__$tarif->slug");
                 }
                 return $keyboard;
             })->send();
@@ -183,11 +183,13 @@ class BotWebhookHandler extends AbstractWebhookHandler
             ->send();
 
         sleep(5);
+
         $this->success();
     }
 
     public function success(): void
     {
+        
         $this->chat->message("Оплата прошла успешно
             \nОтправляем Вам приглашение на закрытый канал, заявки принимаются автоматически!")
             ->keyboard(function(Keyboard $keyboard){
