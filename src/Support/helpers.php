@@ -10,3 +10,13 @@ if(!function_exists('getUploadPath')){
         return $newDirPath;
     }
 }
+
+if (!function_exists('getHumanDate')) {
+    function getHumanDate($date, $time = false){
+        $format = 'd F Y г.';
+        if($time){
+            $format = 'd F Y H:i';
+        }
+        return Illuminate\Support\Carbon::parse($date)->translatedFormat($format);
+    }
+}
