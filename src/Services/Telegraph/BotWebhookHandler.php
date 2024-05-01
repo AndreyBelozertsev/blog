@@ -107,7 +107,8 @@ class BotWebhookHandler extends AbstractWebhookHandler
         else{ 
             $this->chat->message('У вас нет активной подписки')->send();
         }
-        $this->chat->keyboard(function(Keyboard $keyboard){
+        $this->chat->message('Навигация')
+        ->keyboard(function(Keyboard $keyboard){
             $keyboard
                 ->row([
                     Button::make('Тарифы')->action('pay'),
