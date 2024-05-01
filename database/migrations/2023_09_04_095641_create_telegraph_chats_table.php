@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use Domain\Client\Models\Client;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class () extends Migration {
     public function up(): void
@@ -13,6 +14,10 @@ return new class () extends Migration {
             $table->string('name')->nullable();
 
             $table->foreignId('telegraph_bot_id')->constrained('telegraph_bots')->cascadeOnDelete();
+            $table->foreignIdFor(Client::class)
+                    ->constrained()
+                    ->cascadeOnDelete()
+                    ->nullable();
             $table->timestamps();
 
             $table->unique(['chat_id', 'telegraph_bot_id']);
