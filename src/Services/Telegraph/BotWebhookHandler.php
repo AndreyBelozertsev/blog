@@ -45,22 +45,28 @@ class BotWebhookHandler extends AbstractWebhookHandler
     {
         $chat_id = $chatJoinQuery->chat()->id();
         $tg_user_id = $chatJoinQuery->from()->id();
-        $client = Client::where('telegram_id', $tg_user_id)->whereHas('subscriptions', function($q){
-            $q->activeItem(); 
-        })
-        ->has('chat')
-        ->with('chat')
-        ->first();
 
-        if($client){
-            TelegraphCustomFacade::approveChatJoin( $chat_id, $tg_user_id)->send();
-            $telegraphChat = $client->chat;
-            $telegraphChat->html("Ваша заявка одобрена!"
-            )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
-                return $keyboard
-                    ->button('В канал')->url('https://t.me/+Hhk2cv4yI-tlMWYy');
-            })->send();
+
+        $telegraphChat = TelegraphChat::with('client')->whereHas('client', function($q) use($tg_user_id){
+            $q->where('telegram_id', $tg_user_id)
+                ->whereHas('subscriptions', function($q){
+                    $q->activeItem(); 
+                });
+            })->first();
+
+        if(!$telegraphChat || !($chat_id == env('TG_CHANEL'))){
+            return;
         }
+
+
+        TelegraphCustomFacade::approveChatJoin( $chat_id, $tg_user_id)->send();
+
+        $telegraphChat->html("Ваша заявка одобрена!"
+        )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
+            return $keyboard
+                ->button('В канал')->url('https://t.me/+Hhk2cv4yI-tlMWYy');
+        })->send();
+    
     }
     
     public function start(): void
