@@ -16,7 +16,6 @@ return new class () extends Migration {
             $table->foreignId('telegraph_bot_id')->constrained('telegraph_bots')->cascadeOnDelete();
             $table->foreignIdFor(Client::class)
                     ->constrained()
-                    ->nullOnDelete()
                     ->nullable();
             $table->timestamps();
 
