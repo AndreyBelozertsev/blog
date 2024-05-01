@@ -108,19 +108,19 @@ class BotWebhookHandler extends AbstractWebhookHandler
             $this->chat->message('У вас нет активной подписки')->send();
         }
         $this->chat->message('Меню')
-        ->keyboard(function(Keyboard $keyboard){
-            $keyboard
-                ->row([
-                    Button::make('Тарифы')->action('pay'),
-                ]);
-            if( Subscription::activeItem($this->chat->client->id)->first() ){
+            ->keyboard(function(Keyboard $keyboard){
                 $keyboard
-                ->row([
-                    Button::make('Окончание подписки')->action('expire')
-                ]);
-            }
-            return $keyboard;
-        })->send();
+                    ->row([
+                        Button::make('Тарифы')->action('pay'),
+                    ]);
+                if( Subscription::activeItem($this->chat->client->id)->first() ){
+                    $keyboard
+                    ->row([
+                        Button::make('Окончание подписки')->action('expire')
+                    ]);
+                }
+                return $keyboard;
+            })->send();
     }
 
     protected function handleCallbackQuery(): void
@@ -170,14 +170,18 @@ class BotWebhookHandler extends AbstractWebhookHandler
                     ->button('Оплатить')->url('https://ya.ru');
             })
             ->send();
+
+        sleep(5);
+        $this->success();
     }
 
     public function success(): void
     {
-        $this->chat->message('Оплата прошла успешно')
+        $this->chat->message("Оплата прошла успешно
+            \nОтправляем Вам приглашение на закрытый канал, заявки принимаются автоматически!")
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
-                    ->button('Перейти в канал')->url('https://ya.ru');
+                    ->button('Перейти в канал')->url('https://t.me/+Ybl8epmC-qZiZDgy');
             })
             ->send();
     }
