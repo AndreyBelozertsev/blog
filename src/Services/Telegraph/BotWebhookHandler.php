@@ -64,7 +64,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
         $telegraphChat->html("Ваша заявка одобрена!"
         )->keyboard(function(Keyboard $keyboard) use($chatJoinQuery){
             return $keyboard
-                ->button('В канал')->url('https://t.me/+Hhk2cv4yI-tlMWYy');
+                ->button('В канал')->url(env('TG_CHANEL_INVITE_LINK'));
         })->send();
     
     }
@@ -194,7 +194,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
             \nОтправляем Вам приглашение на закрытый канал, заявки принимаются автоматически!")
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
-                    ->button('Перейти в канал')->url('https://t.me/+Hhk2cv4yI-tlMWYy');
+                    ->button('Перейти в канал')->url(env('TG_CHANEL_INVITE_LINK'));
             })
             ->send();
     }
