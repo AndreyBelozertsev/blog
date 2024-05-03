@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
-use Domain\Client\Models\Client;
 use Services\Telegraph\Models\TelegraphChat;
 use App\Http\Requests\ConsultationFormRequest;
 use Services\Telegraph\Facade\TelegraphCustom;
@@ -11,6 +10,7 @@ use Services\Telegraph\Facade\TelegraphCustom;
 class HomeController extends Controller
 {
     public function index(){
+
         return view('page.home');
     }
 
@@ -34,21 +34,26 @@ class HomeController extends Controller
         dump($chat->client);
         //transaction
         $subscription = $chat->client->subscriptions()->activeItem()->first();
-        if($subscription){
-            $chat->client->subscriptions()->create([
-                'status' => 1,
-                'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays(2)
-            ]);
-            $subscription->update(['status' => 0]);
-        }else{
-            $chat->client->subscriptions()->create([
-                'status' => 1,
-                'expaire_at' => Carbon::parse(NOW())->addDays(2)
-            ]);
-        }
+        // if($subscription){
+        //     $chat->client->subscriptions()->create([
+        //         'status' => 1,
+        //         'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays(2)
+        //     ]);
+        //     $subscription->update(['status' => 0]);
+        // }else{
+        //     $chat->client->subscriptions()->create([
+        //         'status' => 1,
+        //         'expaire_at' => Carbon::parse(NOW())->addDays(2)
+        //     ]);
+        // }
         //endtransaction
         // if($subscription = $this->chat->client()->subscriptions())
-
+        // $chat->client->subscriptions()->create([
+        //     'status' => 1,
+        //     'expaire_at' => Carbon::parse(NOW())->addDays()
+        // ]);
+        $date = Carbon::parse(NOW())->addDays(30);
+        dump($date);
         dump($subscription);
     
     }

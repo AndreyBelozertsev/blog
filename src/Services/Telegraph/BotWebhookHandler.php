@@ -187,19 +187,19 @@ class BotWebhookHandler extends AbstractWebhookHandler
             ->send();
 
 
-            $subscription = $this->chat->client->subscriptions()->activeItem()->first();
-            if($subscription){
-                $this->chat->client->subscriptions()->create([
-                    'status' => 1,
-                    'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($tarif->days)
-                ]);
-                $subscription->update(['status' => 0]);
-            }else{
-                $this->chat->client->subscriptions()->create([
-                    'status' => 1,
-                    'expaire_at' => Carbon::parse(NOW())->addDays($tarif->days)
-                ]);
-            }
+        $subscription = $this->chat->client->subscriptions()->activeItem()->first();
+        if($subscription){
+            $this->chat->client->subscriptions()->create([
+                'status' => 1,
+                'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($tarif->days)
+            ]);
+            $subscription->update(['status' => 0]);
+        }else{
+            $this->chat->client->subscriptions()->create([
+                'status' => 1,
+                'expaire_at' => Carbon::parse(NOW())->addDays($tarif->days)
+            ]);
+        }
         sleep(5);
 
         $this->success();
