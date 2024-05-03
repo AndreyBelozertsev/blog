@@ -2,6 +2,7 @@
 namespace Services\Telegraph;
 
 
+use Carbon\Carbon;
 use ReflectionMethod;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -17,8 +18,8 @@ use Services\Telegraph\DTO\ChatJoinQuery;
 use DefStudio\Telegraph\DTO\CallbackQuery;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use Services\Telegraph\Models\TelegraphChat;
-use DefStudio\Telegraph\Keyboard\ReplyButton;
 
+use DefStudio\Telegraph\Keyboard\ReplyButton;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
@@ -182,6 +183,20 @@ class BotWebhookHandler extends AbstractWebhookHandler
             })
             ->send();
 
+
+            $subscription = $this->chat->client->subscriptions()->activeItem()->first();
+            if($subscription){
+                $this->chat->client->subscriptions()->create([
+                    'status' => 1,
+                    'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($tarif->days)
+                ]);
+                $subscription->update(['status' => 0]);
+            }else{
+                $this->chat->client->subscriptions()->create([
+                    'status' => 1,
+                    'expaire_at' => Carbon::parse(NOW())->addDays($tarif->days)
+                ]);
+            }
         sleep(5);
 
         $this->success();

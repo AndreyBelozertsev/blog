@@ -16,6 +16,7 @@ class TgTarif extends Model
     protected $fillable = [
         'title',
         'price',
+        'days',
         'sort',
         'status',
     ];

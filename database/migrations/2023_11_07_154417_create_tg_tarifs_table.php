@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->integer('price');
+            $table->integer('days');
             $table->boolean('status')->default(true)->nullable();
             $table->integer('sort')->default(500);
             $table->timestamps();
