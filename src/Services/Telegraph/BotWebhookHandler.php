@@ -86,7 +86,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
         $telegram_id = $preCheckoutQuery->from()->id();
         $ok = false;
         $error_message = 'Указанная транзакция не найдена';
-        if($payment_registry = PaymentRegistry::where('invoice_payload', $invoice_payload)
+        if(PaymentRegistry::where('invoice_payload', $invoice_payload)
             ->where('telegram_id', $telegram_id)
             ->where('status', false)
             ->first()   )
