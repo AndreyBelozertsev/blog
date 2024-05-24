@@ -198,26 +198,26 @@ class BotWebhookHandler extends AbstractWebhookHandler
             ]
         ];
 
-        $this->chat->message("Вы выбрали тарфиф: $tarif->title.")
+        $this->chat->message("Вы выбрали тарфиф: $tarif->title. " . $this->chat->chat_id)
         ->send();
 
         TelegraphCustomFacade::sendInvoice($this->chat->chat_id, 'Оплата за подписку на канал', 'Оплата за подписку на канал PapaZhuk сроком на 90 дней', '2234fdfw46qadsg4634', $prices, $provider_data );
 
 
 
-        $subscription = $this->chat->client->subscriptions()->activeItem()->first();
-        if($subscription){
-            $this->chat->client->subscriptions()->create([
-                'status' => 1,
-                'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($tarif->days)
-            ]);
-            $subscription->update(['status' => 0]);
-        }else{
-            $this->chat->client->subscriptions()->create([
-                'status' => 1,
-                'expaire_at' => Carbon::parse(NOW())->addDays($tarif->days)
-            ]);
-        }
+        // $subscription = $this->chat->client->subscriptions()->activeItem()->first();
+        // if($subscription){
+        //     $this->chat->client->subscriptions()->create([
+        //         'status' => 1,
+        //         'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($tarif->days)
+        //     ]);
+        //     $subscription->update(['status' => 0]);
+        // }else{
+        //     $this->chat->client->subscriptions()->create([
+        //         'status' => 1,
+        //         'expaire_at' => Carbon::parse(NOW())->addDays($tarif->days)
+        //     ]);
+        // }
 
         sleep(5);
 
