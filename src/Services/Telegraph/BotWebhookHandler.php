@@ -179,12 +179,30 @@ class BotWebhookHandler extends AbstractWebhookHandler
             return;
         }
 
-        $this->chat->message("Вы выбрали тарфиф: $tarif->title. \nСсылка на оплату:")
-            ->keyboard(function(Keyboard $keyboard){
-                return $keyboard
-                    ->button('Оплатить')->url('https://ya.ru');
-            })
-            ->send();
+        $prices =  [
+            'label' => 'руб',
+            'amount' => 300   
+        ];
+
+        $provider_data = [
+            'receipt' => [
+                'items' => [
+                    'description' => 'Подписка на канал сроком на 90 дней',
+                    'quantity' => 1,
+                    'amount' => [
+                        'value' => 300.00,
+                        'currency' => 'RUB'    
+                    ],
+                    'vat_code' => 1
+                ]    
+            ]
+        ];
+
+        $this->chat->message("Вы выбрали тарфиф: $tarif->title.")
+        ->send();
+
+        TelegraphCustomFacade::sendInvoice($this->chat->chat_id, 'Оплата за подписку на канал', 'Оплата за подписку на канал PapaZhuk сроком на 90 дней', '2234fdfw46qadsg4634', $prices, $provider_data );
+
 
 
         $subscription = $this->chat->client->subscriptions()->activeItem()->first();
@@ -200,9 +218,12 @@ class BotWebhookHandler extends AbstractWebhookHandler
                 'expaire_at' => Carbon::parse(NOW())->addDays($tarif->days)
             ]);
         }
+
         sleep(5);
 
         $this->success();
+
+        
     }
 
     public function success(): void
