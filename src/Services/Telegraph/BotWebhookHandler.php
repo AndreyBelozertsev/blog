@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Log;
 use DefStudio\Telegraph\DTO\Message;
 use DefStudio\Telegraph\DTO\InlineQuery;
 use DefStudio\Telegraph\Keyboard\Button;
+use Domain\Order\Models\PaymentRegistry;
 use Domain\Telegram\Models\Subscription;
 use Services\Telegraph\DTO\ChatJoinQuery;
 use DefStudio\Telegraph\DTO\CallbackQuery;
 use DefStudio\Telegraph\Keyboard\Keyboard;
-use Services\Telegraph\Models\TelegraphChat;
 
+use Services\Telegraph\DTO\PreCheckoutQuery;
+use Services\Telegraph\Models\TelegraphChat;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
@@ -38,6 +40,12 @@ class BotWebhookHandler extends AbstractWebhookHandler
             /* @phpstan-ignore-next-line */
 
             $this->handleChatJoinQuery(ChatJoinQuery::fromArray($this->request->input('chat_join_request')));
+        }
+
+        if ($this->request->has('pre_checkout_query')) {
+            /* @phpstan-ignore-next-line */
+
+            $this->handlePreCheckoutQuery(ChatJoinQuery::fromArray($this->request->input('pre_checkout_query')));
         }
 
     }
@@ -67,6 +75,30 @@ class BotWebhookHandler extends AbstractWebhookHandler
             return $keyboard
                 ->button('В канал')->url(env('TG_CHANEL_INVITE_LINK'));
         })->send();
+    
+    }
+
+
+    protected function handlePreCheckoutQuery(PreCheckoutQuery $preCheckoutQuery): void
+    {
+        $pre_checkout_query_id = $preCheckoutQuery->id();
+        $invoice_payload = $preCheckoutQuery->invoice_payload();
+        $tg_user_id = $preCheckoutQuery->from()->id();
+
+
+        $telegraphChat = TelegraphChat::with('client')->whereHas('client', function($q) use($tg_user_id){
+            $q->where('telegram_id', $tg_user_id)
+                ->whereHas('subscriptions', function($q){
+                    $q->activeItem(); 
+                });
+            })->first();
+
+        if(!$telegraphChat || !($chat_id == env('TG_CHANEL'))){
+            return;
+        }
+
+
+        TelegraphCustomFacade::approveChatJoin( $chat_id, $tg_user_id)->send();
     
     }
     
@@ -179,29 +211,24 @@ class BotWebhookHandler extends AbstractWebhookHandler
             return;
         }
 
-        $prices =  [
-            'label' => 'руб',
-            'amount' => 300   
-        ];
+        $prices = $this->getPaymentPrices($tarif);
+        $provider_data = $this->getProviderData($tarif);
+        $description = "Оплата за подписку на канал PapaZhuk сроком на {$tarif->title}";
 
-        $provider_data = [
-            'receipt' => [
-                'items' => [
-                    'description' => 'Подписка на канал сроком на 90 дней',
-                    'quantity' => 1,
-                    'amount' => [
-                        'value' => 300.00,
-                        'currency' => 'RUB'    
-                    ],
-                    'vat_code' => 1
-                ]    
-            ]
-        ];
+        $payment_registry = PaymentRegistry::create([
+            'telegram_id' => $this->chat->client->telegram_id,
+            'total_amount' => $tarif->price->raw(),
+            'description' => $description,
+            'status'=>false
+        ]);
 
-        $this->chat->message("Вы выбрали тарфиф: $tarif->title. " . $this->chat->chat_id)
-        ->send();
 
-        TelegraphCustomFacade::sendInvoice($this->chat->chat_id, 'Оплата за подписку на канал', 'Оплата за подписку на канал PapaZhuk сроком на 90 дней', '2234fdfw46qadsg4634', $prices, $provider_data );
+
+        $this->chat->message("Вы выбрали тарфиф: $tarif->title")
+            ->send();
+
+        TelegraphCustomFacade::sendInvoice($this->chat->chat_id, 'Канал Александра Жука', $description, $payment_registry->invoice_payload, $prices, $provider_data )
+            ->send();
 
 
 
@@ -219,9 +246,8 @@ class BotWebhookHandler extends AbstractWebhookHandler
         //     ]);
         // }
 
-        sleep(5);
 
-        $this->success();
+        //$this->success();
 
         
     }
@@ -252,6 +278,33 @@ class BotWebhookHandler extends AbstractWebhookHandler
                 'last_name' => $this->message->from()->lastName(),
             ]
         );
+    }
 
+    protected function getPaymentPrices($tarif)
+    {
+         return  [
+            'label' => 'руб',
+            'amount' => $tarif->price->raw()
+        ];
+    
+    }
+
+    protected function getProviderData($tarif)
+    {
+
+        return [
+            'receipt' => [
+                'items' => [
+                    'description' => "Подписка на {$tarif->title}",
+                    'quantity' => 1,
+                    'amount' => [
+                        'value' => $tarif->price->raw(),
+                        'currency' => 'RUB'    
+                    ],
+                    'vat_code' => 1
+                ]    
+            ]
+        ];
+    
     }
 }

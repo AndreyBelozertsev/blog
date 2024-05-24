@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Carbon\Carbon;
+use Domain\Product\Models\TgTarif;
 use Services\Telegraph\Models\TelegraphChat;
 use App\Http\Requests\ConsultationFormRequest;
 use Services\Telegraph\Facade\TelegraphCustom;
@@ -11,6 +12,8 @@ class HomeController extends Controller
 {
     public function index(){
 
+        $tarif = TgTarif::first();
+        dump($tarif->price->raw());
         return view('page.home');
     }
 
