@@ -280,8 +280,10 @@ class BotWebhookHandler extends AbstractWebhookHandler
     protected function getPaymentPrices($tarif)
     {
          return  [
+            [
             'label' => 'руб',
             'amount' => $tarif->price->raw()
+            ]
         ];
     
     }
