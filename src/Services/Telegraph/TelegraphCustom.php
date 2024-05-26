@@ -16,7 +16,6 @@ class TelegraphCustom extends Telegraph
     
     public const ENDPOINT_APPROVE_CHAT_JOIN_REQUEST = 'approveChatJoinRequest';
     public const ENDPOINT_SEND_INVOICE = 'sendInvoice';
-
     public const ENDPOINT_ANSWER_PRE_CHECKOUT_QUERY = 'answerPreCheckoutQuery';
 
 
