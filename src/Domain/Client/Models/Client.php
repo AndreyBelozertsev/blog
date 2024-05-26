@@ -3,6 +3,7 @@
 namespace Domain\Client\Models;
 
 use Domain\Order\Models\Order;
+use Domain\Order\Models\PaymentRegistry;
 use Illuminate\Database\Eloquent\Model;
 use Domain\Telegram\Models\Subscription;
 use Services\Telegraph\Models\TelegraphChat;
@@ -40,5 +41,10 @@ class Client extends Model
     public function subscriptions(): HasMany
     {
         return $this->hasMany(Subscription::class);
+    }
+
+    public function payments_registry()
+    {
+        return $this->hasMany(PaymentRegistry::class, 'telegram_id', 'telegram_id');
     }
 }

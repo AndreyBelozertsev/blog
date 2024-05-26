@@ -6,6 +6,7 @@ use Support\Traits\HasSlug;
 use Support\Casts\PriceCast;
 use Support\Traits\ScopeActive;
 use Illuminate\Database\Eloquent\Model;
+use Domain\Order\Models\PaymentRegistry;
 use Domain\Product\QueryBuilders\TgTarifQueryBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -50,6 +51,11 @@ class TgTarif extends Model
  
         $this->{$this->slugColumn()} = $this->{$this->slugColumn()} ?? $slug;
       
+    }
+
+    public function payments_registry()
+    {
+        return $this->hasMany(PaymentRegistry::class);
     }
 
     public function newEloquentBuilder($query): TgTarifQueryBuilder 

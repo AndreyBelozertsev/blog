@@ -22,6 +22,7 @@ use DefStudio\Telegraph\Keyboard\Keyboard;
 use Services\Telegraph\DTO\PreCheckoutQuery;
 use Services\Telegraph\Models\TelegraphChat;
 use DefStudio\Telegraph\Keyboard\ReplyButton;
+use Services\Telegraph\DTO\SuccessfulPayment;
 use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
@@ -45,6 +46,11 @@ class BotWebhookHandler extends AbstractWebhookHandler
         if ($this->request->has('pre_checkout_query')) {
             /* @phpstan-ignore-next-line */
             $this->handlePreCheckoutQuery(PreCheckoutQuery::fromArray($this->request->input('pre_checkout_query')));
+        }
+
+        if ($this->request->has('successful_payment')) {
+            /* @phpstan-ignore-next-line */
+            $this->handleSuccessfulPayment(SuccessfulPayment::fromArray($this->request->input('successful_payment')));
         }
 
     }
@@ -80,7 +86,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
     protected function handlePreCheckoutQuery(PreCheckoutQuery $preCheckoutQuery): void
     {
-
         $pre_checkout_query_id = $preCheckoutQuery->id();
         $invoice_payload = $preCheckoutQuery->invoice_payload();
         $telegram_id = $preCheckoutQuery->from()->id();
@@ -97,6 +102,47 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
         TelegraphCustomFacade::answerPreCheckoutQuery( $pre_checkout_query_id, $ok, $error_message )->send();
     
+    }
+
+    protected function handleSuccessfulPayment(SuccessfulPayment $successfulPayment): void
+    {
+        if(!$payment_registry = PaymentRegistry::where('invoice_payload', $successfulPayment->invoice_payload())
+            ->where('status', false)
+            ->with('client')
+            ->with('tarif')
+            ->first()   )
+        {
+            return;
+        }
+
+        $subscription = $payment_registry->client->subscriptions()->activeItem()->first();
+        if($subscription){
+            $payment_registry->client->subscriptions()->create([
+                'status' => 1,
+                'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($payment_registry->tarif->days)
+            ]);
+            $subscription->update(['status' => 0]);
+        }else{
+            $payment_registry->client->subscriptions()->create([
+                'status' => 1,
+                'expaire_at' => Carbon::parse(NOW())->addDays($payment_registry->tarif->days)
+            ]);
+        }   
+        
+        $telegram_id = $payment_registry->client->telegram_id;
+
+        $telegraphChat = TelegraphChat::with('client')->whereHas('client', function($q) use($telegram_id){
+                $q->where('telegram_id', $telegram_id);
+        })->first();
+
+        $telegraphChat->message("Оплата прошла успешно
+        \nОтправляем Вам приглашение на закрытый канал, заявки принимаются автоматически!")
+        ->keyboard(function(Keyboard $keyboard){
+            return $keyboard
+                ->button('Перейти в канал')->url(env('TG_CHANEL_INVITE_LINK'));
+        })
+        ->send();
+
     }
     
     public function start(): void
@@ -196,7 +242,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
         $this->$action();
     }
 
-
     public function tarif($slug): void
     {
         $tarif = TgTarif::activeItem($slug)->first();
@@ -216,7 +261,8 @@ class BotWebhookHandler extends AbstractWebhookHandler
             'telegram_id' => $this->chat->client->telegram_id,
             'total_amount' => $tarif->price->raw(),
             'description' => $description,
-            'status'=>false
+            'tg_tarif_id' => $tarif->id,
+            'status'=>false,
         ]);
 
 
@@ -249,9 +295,8 @@ class BotWebhookHandler extends AbstractWebhookHandler
         
     }
 
-    public function success(): void
+    public function successPaymentMessage(): void
     {
-        
         $this->chat->message("Оплата прошла успешно
             \nОтправляем Вам приглашение на закрытый канал, заявки принимаются автоматически!")
             ->keyboard(function(Keyboard $keyboard){

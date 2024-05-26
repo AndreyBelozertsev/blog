@@ -1,7 +1,9 @@
 <?php
 namespace Domain\Order\Models;
 
+use Domain\Product\Models\TgTarif;
 use Support\Traits\UsesUuid;
+use Domain\Client\Models\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -18,4 +20,14 @@ class PaymentRegistry extends Model
         'description',
         'status'
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class, 'telegram_id', 'telegram_id');
+    }
+
+    public function tarif()
+    {
+        return $this->belongsTo(TgTarif::class);
+    }
 }

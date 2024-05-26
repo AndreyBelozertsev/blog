@@ -11,9 +11,6 @@ use Services\Telegraph\Facade\TelegraphCustom;
 class HomeController extends Controller
 {
     public function index(){
-
-        $tarif = TgTarif::first();
-        dump($tarif->price->raw());
         return view('page.home');
     }
 
@@ -56,8 +53,7 @@ class HomeController extends Controller
         //     'expaire_at' => Carbon::parse(NOW())->addDays()
         // ]);
         $date = Carbon::parse(NOW())->addDays(30);
-        dump($date);
-        dump($subscription);
+
     
     }
 }
