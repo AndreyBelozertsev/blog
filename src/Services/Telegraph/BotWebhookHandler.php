@@ -115,21 +115,29 @@ class BotWebhookHandler extends AbstractWebhookHandler
             return;
         }
 
-        $subscription = $payment_registry->client->subscriptions()->activeItem()->first();
+        $payment_registry->update([
+            'status' => 1,
+            'telegram_payment_charge_id' => $successfulPayment->telegram_payment_charge_id(),
+            'provider_payment_charge_id' => $successfulPayment->provider_payment_charge_id(),
+        ]);
+        $telegram_id = $payment_registry->client->telegram_id;
+        $client_id = $payment_registry->client->id;
+
+        $subscription = Subscription::where('client_id', $client_id)->where('status', 1)->first();
         if($subscription){
-            $payment_registry->client->subscriptions()->create([
+            Subscription::create([
                 'status' => 1,
+                'client_id' => $client_id,
                 'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($payment_registry->tarif->days)
             ]);
             $subscription->update(['status' => 0]);
         }else{
-            $payment_registry->client->subscriptions()->create([
+            Subscription::create([
                 'status' => 1,
+                'client_id' => $client_id,
                 'expaire_at' => Carbon::parse(NOW())->addDays($payment_registry->tarif->days)
             ]);
-        }   
-        
-        $telegram_id = $payment_registry->client->telegram_id;
+        }
 
         $telegraphChat = TelegraphChat::with('client')->whereHas('client', function($q) use($telegram_id){
                 $q->where('telegram_id', $telegram_id);

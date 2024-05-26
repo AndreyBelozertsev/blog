@@ -15,6 +15,7 @@ class Subscription extends Model
 
     protected $fillable = [
         'status',
+        'client_id',
         'expaire_at'
     ];
 

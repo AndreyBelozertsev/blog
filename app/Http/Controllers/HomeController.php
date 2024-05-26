@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use Domain\Product\Models\TgTarif;
+use Domain\Order\Models\PaymentRegistry;
 use Services\Telegraph\Models\TelegraphChat;
 use App\Http\Requests\ConsultationFormRequest;
 use Services\Telegraph\Facade\TelegraphCustom;
@@ -11,6 +12,18 @@ use Services\Telegraph\Facade\TelegraphCustom;
 class HomeController extends Controller
 {
     public function index(){
+
+        if(!$payment_registry = PaymentRegistry::where('invoice_payload', '880933d4-ad71-4201-873a-4f4d20282fd8')
+        //->where('status', false)
+        ->with('client')
+        ->with('tarif')
+        ->first()   )
+    {
+        return;
+    }
+
+        dump($payment_registry);
+
         return view('page.home');
     }
 

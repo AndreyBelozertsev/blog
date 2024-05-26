@@ -18,6 +18,9 @@ class PaymentRegistry extends Model
         'invoice_payload',
         'total_amount',
         'description',
+        'tg_tarif_id',
+        'telegram_payment_charge_id',
+        'provider_payment_charge_id',
         'status'
     ];
 
@@ -28,6 +31,6 @@ class PaymentRegistry extends Model
 
     public function tarif()
     {
-        return $this->belongsTo(TgTarif::class);
+        return $this->belongsTo(TgTarif::class, 'tg_tarif_id', 'id');
     }
 }
