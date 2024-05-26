@@ -44,7 +44,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
         if ($this->request->has('pre_checkout_query')) {
             /* @phpstan-ignore-next-line */
-
             $this->handlePreCheckoutQuery(PreCheckoutQuery::fromArray($this->request->input('pre_checkout_query')));
         }
 
@@ -81,6 +80,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
     protected function handlePreCheckoutQuery(PreCheckoutQuery $preCheckoutQuery): void
     {
+
         $pre_checkout_query_id = $preCheckoutQuery->id();
         $invoice_payload = $preCheckoutQuery->invoice_payload();
         $telegram_id = $preCheckoutQuery->from()->id();

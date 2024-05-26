@@ -17,7 +17,7 @@ class PreCheckoutQuery implements Arrayable
     private User $from;
     private string $currency;
     private int $total_amount;
-    private bool $invoice_payload;
+    private string $invoice_payload;
 
     private function __construct()
     {
