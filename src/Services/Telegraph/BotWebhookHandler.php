@@ -45,7 +45,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
         if ($this->request->has('pre_checkout_query')) {
             /* @phpstan-ignore-next-line */
 
-            $this->handlePreCheckoutQuery(ChatJoinQuery::fromArray($this->request->input('pre_checkout_query')));
+            $this->handlePreCheckoutQuery(PreCheckoutQuery::fromArray($this->request->input('pre_checkout_query')));
         }
 
     }
