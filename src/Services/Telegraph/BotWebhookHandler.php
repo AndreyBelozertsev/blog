@@ -3,27 +3,18 @@ namespace Services\Telegraph;
 
 
 use Carbon\Carbon;
-use ReflectionMethod;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Domain\Client\Models\Client;
 use Domain\Product\Models\TgTarif;
-use Illuminate\Support\Stringable;
 use Illuminate\Support\Facades\Log;
-use DefStudio\Telegraph\DTO\Message;
-use DefStudio\Telegraph\DTO\InlineQuery;
 use DefStudio\Telegraph\Keyboard\Button;
 use Domain\Order\Models\PaymentRegistry;
 use Domain\Telegram\Models\Subscription;
 use Services\Telegraph\DTO\ChatJoinQuery;
-use DefStudio\Telegraph\DTO\CallbackQuery;
 use DefStudio\Telegraph\Keyboard\Keyboard;
-
 use Services\Telegraph\DTO\PreCheckoutQuery;
 use Services\Telegraph\Models\TelegraphChat;
-use DefStudio\Telegraph\Keyboard\ReplyButton;
 use Services\Telegraph\DTO\SuccessfulPayment;
-use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 use DefStudio\Telegraph\Exceptions\TelegramWebhookException;
 use Services\Telegraph\Facade\TelegraphCustom as TelegraphCustomFacade;
 
@@ -80,7 +71,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
             return $keyboard
                 ->button('В канал')->url(env('TG_CHANEL_INVITE_LINK'));
         })->send();
-    
     }
 
 
@@ -116,7 +106,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
         }
 
         $payment_registry->update([
-            'status' => 1,
+            'status' => true,
             'telegram_payment_charge_id' => $successfulPayment->telegram_payment_charge_id(),
             'provider_payment_charge_id' => $successfulPayment->provider_payment_charge_id(),
         ]);
@@ -155,7 +145,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
     
     public function start(): void
     {
-
         $this->setClient();
 
         $this->chat->html("Добро пожаловать!
@@ -223,7 +212,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
     protected function handleCallbackQuery(): void
     {
-        
         $this->extractCallbackQueryData();
 
         if (config('telegraph.debug_mode')) {
@@ -273,34 +261,11 @@ class BotWebhookHandler extends AbstractWebhookHandler
             'status'=>false,
         ]);
 
-
-
         $this->chat->message("Вы выбрали тарфиф: $tarif->title")
             ->send();
 
         TelegraphCustomFacade::sendInvoice($this->chat->chat_id, 'Канал Александра Жука', $description, $payment_registry->invoice_payload, $prices, $provider_data )
-            ->send();
-
-
-
-        // $subscription = $this->chat->client->subscriptions()->activeItem()->first();
-        // if($subscription){
-        //     $this->chat->client->subscriptions()->create([
-        //         'status' => 1,
-        //         'expaire_at' => Carbon::parse($subscription->expaire_at)->addDays($tarif->days)
-        //     ]);
-        //     $subscription->update(['status' => 0]);
-        // }else{
-        //     $this->chat->client->subscriptions()->create([
-        //         'status' => 1,
-        //         'expaire_at' => Carbon::parse(NOW())->addDays($tarif->days)
-        //     ]);
-        // }
-
-
-        //$this->success();
-
-        
+            ->send();        
     }
 
     public function successPaymentMessage(): void
@@ -317,7 +282,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
 
     protected function setClient()
     {
-
         $this->chat->client()->updateOrCreate([
                 'telegraph_chat_id' => $this->chat->id
             ],
@@ -330,7 +294,7 @@ class BotWebhookHandler extends AbstractWebhookHandler
         );
     }
 
-    protected function getPaymentPrices($tarif)
+    protected function getPaymentPrices($tarif): array
     {
          return  [
             [
@@ -338,14 +302,13 @@ class BotWebhookHandler extends AbstractWebhookHandler
             'amount' => $tarif->price->raw()
             ]
         ];
-    
     }
 
-    protected function getProviderData($tarif)
+    protected function getProviderData($tarif): array
     {
-
         return [
             'receipt' => [
+                'email' => 'info.rakurs@bk.ru',
                 'items' => [
                     'description' => "Подписка на {$tarif->title}",
                     'quantity' => 1,
@@ -357,6 +320,5 @@ class BotWebhookHandler extends AbstractWebhookHandler
                 ]    
             ]
         ];
-    
     }
 }
