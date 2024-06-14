@@ -308,7 +308,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
     {
         return [
             'receipt' => [
-                'email' => 'info.rakurs@bk.ru',
                 'items' => [
                     'description' => "Подписка на {$tarif->title}",
                     'quantity' => 1,
