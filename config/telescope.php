@@ -1,8 +1,9 @@
 <?php
 
 use Laravel\Telescope\Watchers;
-use App\Http\Middleware\Authenticate;
-use Laravel\Telescope\Http\Middleware\Authorize;
+use MoonShine\Http\Middleware\Authenticate;
+
+
 
 return [
 
@@ -77,8 +78,8 @@ return [
     */
 
     'middleware' => [
-        'moonshine',
-        Authenticate::class,
+        'web',
+        Authenticate::class
     ],
 
     /*
