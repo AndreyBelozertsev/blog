@@ -20,7 +20,7 @@ trait ResponseSendInvoice
         $telegraph->endpoint = self::ENDPOINT_SEND_INVOICE;
 
         $telegraph->data['chat_id'] = $chat_id;
-        $telegraph->data['provider_token'] = env('YOUKASSA_PAYMENT_TOKEN');
+        $telegraph->data['provider_token'] = env('YOUKASSA_PAYMENT_TOKEN_TEST');
         $telegraph->data['title'] = $title;
         $telegraph->data['description'] = $description;
         $telegraph->data['payload'] = $payload;
