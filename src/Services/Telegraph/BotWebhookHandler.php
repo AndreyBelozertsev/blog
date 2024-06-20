@@ -26,7 +26,50 @@ class BotWebhookHandler extends AbstractWebhookHandler
     {
         Log::build(['driver' => 'single', 'path' => storage_path('logs/telegram-webhook.log')])->info($request);
 
-        parent::handle($request, $bot);
+        $this->bot = $bot;
+
+        $this->request = $request;
+
+        if ($this->request->has('successful_payment')) {
+            /* @phpstan-ignore-next-line */
+            $this->handleSuccessfulPayment(SuccessfulPayment::fromArray($this->request->input('successful_payment')));
+        }
+
+        if ($this->request->has('message')) {
+            /* @phpstan-ignore-next-line */
+            $this->message = Message::fromArray($this->request->input('message'));
+            $this->handleMessage();
+
+            return;
+        }
+
+        if ($this->request->has('edited_message')) {
+            /* @phpstan-ignore-next-line */
+            $this->message = Message::fromArray($this->request->input('edited_message'));
+            $this->handleMessage();
+
+            return;
+        }
+
+        if ($this->request->has('channel_post')) {
+            /* @phpstan-ignore-next-line */
+            $this->message = Message::fromArray($this->request->input('channel_post'));
+            $this->handleMessage();
+
+            return;
+        }
+
+
+        if ($this->request->has('callback_query')) {
+            /* @phpstan-ignore-next-line */
+            $this->callbackQuery = CallbackQuery::fromArray($this->request->input('callback_query'));
+            $this->handleCallbackQuery();
+        }
+
+        if ($this->request->has('inline_query')) {
+            /* @phpstan-ignore-next-line */
+            $this->handleInlineQuery(InlineQuery::fromArray($this->request->input('inline_query')));
+        }
 
         if ($this->request->has('chat_join_request')) {
             /* @phpstan-ignore-next-line */
@@ -37,11 +80,6 @@ class BotWebhookHandler extends AbstractWebhookHandler
         if ($this->request->has('pre_checkout_query')) {
             /* @phpstan-ignore-next-line */
             $this->handlePreCheckoutQuery(PreCheckoutQuery::fromArray($this->request->input('pre_checkout_query')));
-        }
-
-        if ($this->request->has('successful_payment')) {
-            /* @phpstan-ignore-next-line */
-            $this->handleSuccessfulPayment(SuccessfulPayment::fromArray($this->request->input('successful_payment')));
         }
 
     }

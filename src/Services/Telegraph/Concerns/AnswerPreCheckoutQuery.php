@@ -24,9 +24,7 @@ trait AnswerPreCheckoutQuery
         if($error_message){
             $telegraph->data['error_message'] = $error_message;
         }
-        //$telegraph->data['ok'] = false;
-        //$telegraph->data['error_message'] = 'Проверка текста ответа ошибки';
-
+        
         return $telegraph;
     }
 }
