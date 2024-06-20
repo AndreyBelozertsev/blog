@@ -12,7 +12,7 @@ use Domain\Product\Models\TgTarif;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Stringable;
 use Illuminate\Support\Facades\Log;
-use DefStudio\Telegraph\DTO\Message;
+use Services\Telegraph\DTO\Message;
 use DefStudio\Telegraph\DTO\InlineQuery;
 use DefStudio\Telegraph\Keyboard\Button;
 use Domain\Order\Models\PaymentRegistry;
@@ -58,11 +58,6 @@ class BotWebhookHandler
         $this->bot = $bot;
 
         $this->request = $request;
-
-        if ($this->request->has('successful_payment')) {
-            /* @phpstan-ignore-next-line */
-            $this->handleSuccessfulPayment(SuccessfulPayment::fromArray($this->request->input('successful_payment')));
-        }
 
         if ($this->request->has('message')) {
             /* @phpstan-ignore-next-line */
@@ -163,6 +158,7 @@ class BotWebhookHandler
 
     protected function handleSuccessfulPayment(SuccessfulPayment $successfulPayment): void
     {
+
         if(!$payment_registry = PaymentRegistry::where('invoice_payload', $successfulPayment->invoice_payload())
             ->where('status', false)
             ->with('client')
@@ -177,7 +173,7 @@ class BotWebhookHandler
             'telegram_payment_charge_id' => $successfulPayment->telegram_payment_charge_id(),
             'provider_payment_charge_id' => $successfulPayment->provider_payment_charge_id(),
         ]);
-        $telegram_id = $payment_registry->client->telegram_id;
+
         $client_id = $payment_registry->client->id;
 
         $subscription = Subscription::where('client_id', $client_id)->where('status', 1)->first();
@@ -196,11 +192,9 @@ class BotWebhookHandler
             ]);
         }
 
-        $telegraphChat = TelegraphChat::with('client')->whereHas('client', function($q) use($telegram_id){
-                $q->where('telegram_id', $telegram_id);
-        })->first();
 
-        $telegraphChat->message("Оплата прошла успешно
+
+        $this->chat->message("Оплата прошла успешно
         \nОтправляем Вам приглашение на закрытый канал, заявки принимаются автоматически!")
         ->keyboard(function(Keyboard $keyboard){
             return $keyboard
@@ -466,6 +460,12 @@ class BotWebhookHandler
 
         if ($this->message?->leftChatMember() !== null) {
             $this->handleChatMemberLeft($this->message->leftChatMember());
+
+            return;
+        }
+
+        if ($this->message?->successfulPayment() !== null) {
+            $this->handleSuccessfulPayment($this->message->successfulPayment());
 
             return;
         }
