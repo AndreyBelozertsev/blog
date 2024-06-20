@@ -20,6 +20,7 @@ trait AnswerPreCheckoutQuery
         $telegraph->endpoint = self::ENDPOINT_ANSWER_PRE_CHECKOUT_QUERY;
 
         $telegraph->data['pre_checkout_query_id'] = $pre_checkout_query_id;
+        $telegraph->data['pre_checkout_query_id'] = 22345315354245;
         $telegraph->data['ok'] = $ok;
         if($error_message){
             $telegraph->data['error_message'] = $error_message;
