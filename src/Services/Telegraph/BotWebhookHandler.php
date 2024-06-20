@@ -392,25 +392,25 @@ class BotWebhookHandler
     // еуые
 
 
-    protected function handleCallbackQuery(): void
-    {
-        $this->extractCallbackQueryData();
+    // protected function handleCallbackQuery(): void
+    // {
+    //     $this->extractCallbackQueryData();
 
-        if (config('telegraph.debug_mode')) {
-            Log::debug('Telegraph webhook callback', $this->data->toArray());
-        }
+    //     if (config('telegraph.debug_mode')) {
+    //         Log::debug('Telegraph webhook callback', $this->data->toArray());
+    //     }
 
-        /** @var string $action */
-        $action = $this->callbackQuery?->data()->get('action') ?? '';
-        if (!$this->canHandle($action)) {
-            report(TelegramWebhookException::invalidAction($action));
-            $this->reply(__('telegraph::errors.invalid_action'));
+    //     /** @var string $action */
+    //     $action = $this->callbackQuery?->data()->get('action') ?? '';
+    //     if (!$this->canHandle($action)) {
+    //         report(TelegramWebhookException::invalidAction($action));
+    //         $this->reply(__('telegraph::errors.invalid_action'));
 
-            return;
-        }
+    //         return;
+    //     }
 
-        $this->$action();
-    }
+    //     $this->$action();
+    // }
 
     private function handleCommand(Stringable $text): void
     {
@@ -559,11 +559,6 @@ class BotWebhookHandler
     public function chatid(): void
     {
         $this->chat->html("Chat ID: {$this->chat->chat_id}")->send();
-    }
-
-    public function handle(Request $request, TelegraphBot $bot): void
-    {
-
     }
 
     protected function handleInlineQuery(InlineQuery $inlineQuery): void
