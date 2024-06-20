@@ -249,7 +249,7 @@ class BotWebhookHandler
 
     public function expire(): void
     {
-        if($subscription = Subscription::activeItem($this->chat->client->id)->first()){
+        if($subscription = Subscription::activeItemByClientId($this->chat->client->id)->first()){
             $this->chat->message('Ваша подписка оканчивается: ' . getHumanDate($subscription->expaire_at))->send();
         }
         else{ 
@@ -385,26 +385,6 @@ class BotWebhookHandler
 
     // еуые
 
-
-    // protected function handleCallbackQuery(): void
-    // {
-    //     $this->extractCallbackQueryData();
-
-    //     if (config('telegraph.debug_mode')) {
-    //         Log::debug('Telegraph webhook callback', $this->data->toArray());
-    //     }
-
-    //     /** @var string $action */
-    //     $action = $this->callbackQuery?->data()->get('action') ?? '';
-    //     if (!$this->canHandle($action)) {
-    //         report(TelegramWebhookException::invalidAction($action));
-    //         $this->reply(__('telegraph::errors.invalid_action'));
-
-    //         return;
-    //     }
-
-    //     $this->$action();
-    // }
 
     private function handleCommand(Stringable $text): void
     {
