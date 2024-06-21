@@ -360,7 +360,7 @@ class BotWebhookHandler
          return  [
             [
             'label' => 'RUB',
-            'amount' => "300.00"
+            'amount' => 30000
             ]
         ];
     }
@@ -373,7 +373,7 @@ class BotWebhookHandler
                     'description' => "Подписка на {$tarif->title}",
                     'quantity' => "1.00",
                     'amount' => [
-                        'value' => "$tarif->price->raw()",
+                        'value' => "300.00",
                         'currency' => 'RUB'    
                     ],
                     'vat_code' => 1
