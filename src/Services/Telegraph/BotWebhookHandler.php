@@ -360,7 +360,7 @@ class BotWebhookHandler
          return  [
             [
             'label' => 'RUB',
-            'amount' => "300.00"
+            'amount' => $tarif->price->raw()
             ]
         ];
     }
