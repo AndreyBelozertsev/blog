@@ -371,9 +371,9 @@ class BotWebhookHandler
             'receipt' => [
                 'items' => [
                     'description' => "Подписка на {$tarif->title}",
-                    'quantity' => 1,
+                    'quantity' => "1.00",
                     'amount' => [
-                        'value' => $tarif->price->raw(),
+                        'value' => (string)$tarif->price->raw(),
                         'currency' => 'RUB'    
                     ],
                     'vat_code' => 1
