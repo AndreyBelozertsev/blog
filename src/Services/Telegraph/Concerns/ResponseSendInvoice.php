@@ -25,6 +25,7 @@ trait ResponseSendInvoice
         $telegraph->data['description'] = $description;
         $telegraph->data['payload'] = $payload;
         $telegraph->data['currency'] = 'RUB';
+        $telegraph->data['start_parameter'] = 'test';
         $telegraph->data['prices'] = $prices;
         $telegraph->data['need_email'] = true;
         $telegraph->data['send_email_to_provider'] = false;
