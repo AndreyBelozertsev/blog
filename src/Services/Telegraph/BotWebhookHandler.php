@@ -373,7 +373,7 @@ class BotWebhookHandler
                     'description' => "Подписка на {$tarif->title}",
                     'quantity' => "1.00",
                     'amount' => [
-                        'value' => (string)number_format( $$tarif->price->value(), 2, '.', ' ' ),
+                        'value' => (string)number_format( $tarif->price->value(), 2, '.', ' ' ),
                         'currency' => 'RUB'    
                     ],
                     'vat_code' => 1
