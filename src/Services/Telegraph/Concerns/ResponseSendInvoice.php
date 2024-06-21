@@ -23,7 +23,7 @@ trait ResponseSendInvoice
         $telegraph->data['provider_token'] = env('YOUKASSA_PAYMENT_TOKEN');
         $telegraph->data['title'] = $title;
         $telegraph->data['description'] = $description;
-        $telegraph->data['payload'] = 'test123';
+        $telegraph->data['payload'] = $payload;
         $telegraph->data['currency'] = 'RUB';
         $telegraph->data['start_parameter'] = 'test';
         $telegraph->data['prices'] = $prices;
