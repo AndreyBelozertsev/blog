@@ -247,6 +247,18 @@ class BotWebhookHandler
             })->send();
     }
 
+    public function contact(): void
+    {
+        $this->chat->message('Текст контакты')
+            ->send();
+    }
+
+    public function policy(): void
+    {
+        $this->chat->message('Текст оферты')
+            ->send();
+    }
+
     public function expire(): void
     {
         if($subscription = Subscription::activeItemByClientId($this->chat->client->id)->first()){
