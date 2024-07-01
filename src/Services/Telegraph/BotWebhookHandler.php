@@ -255,7 +255,7 @@ class BotWebhookHandler
 
     public function policy(): void
     {
-        $this->chat->button('')
+        $this->chat
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
                     ->button('Ознакомитсья с текстом')->url(env('AGREE_POLICY'));
