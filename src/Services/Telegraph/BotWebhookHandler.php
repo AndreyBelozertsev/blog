@@ -249,7 +249,11 @@ class BotWebhookHandler
 
     public function contact(): void
     {
-        $this->chat->message('Текст контакты')
+        $this->chat->message("
+            Индивидуальный предприниматель - Жук Ирина Владимировна
+            \nИНН: 911100012468
+            \nОГРН/ОГРНИП: 314910221900021
+            \nКонтактный e-mail: zhukk1111@yandex.ru")
             ->send();
     }
 
@@ -258,7 +262,7 @@ class BotWebhookHandler
         $this->chat->message('Ознакомиться с полным текстом можно перейти по ссылке')
             ->keyboard(function(Keyboard $keyboard){
                 return $keyboard
-                    ->button('Перейты')->url(env('AGREE_POLICY'));
+                    ->button('Перейти')->url(env('AGREE_POLICY'));
             })
             ->send();
     }
