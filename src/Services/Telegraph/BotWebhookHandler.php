@@ -249,10 +249,8 @@ class BotWebhookHandler
 
     public function contact(): void
     {
-        $this->chat->message("Индивидуальный предприниматель - Жук Ирина Владимировна
-            ИНН: 911100012468
-            ОГРН/ОГРНИП: 314910221900021
-            Контактный e-mail: zhukk1111@yandex.ru")
+        $this->chat
+            ->message("Индивидуальный предприниматель - Жук Ирина Владимировна\nИНН: 911100012468\nОГРН/ОГРНИП: 314910221900021\nКонтактный e-mail: zhukk1111@yandex.ru")
             ->send();
     }
 
