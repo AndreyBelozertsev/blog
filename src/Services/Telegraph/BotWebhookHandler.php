@@ -255,7 +255,11 @@ class BotWebhookHandler
 
     public function policy(): void
     {
-        $this->chat->message('Текст оферты')
+        $this->chat->button('')
+            ->keyboard(function(Keyboard $keyboard){
+                return $keyboard
+                    ->button('Ознакомитсья с текстом')->url(env('AGREE_POLICY'));
+            })
             ->send();
     }
 
