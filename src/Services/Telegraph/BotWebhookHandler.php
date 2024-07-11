@@ -390,7 +390,21 @@ class BotWebhookHandler
                     'description' => 'Оплата через Telegram бота',
                     'orderNo' => "12345"
                 ],
+                'client' => [
+                      'email'=> 'and1334@mail.ru'  
+                ],
+                'items' => [
+                    [
+                    'name' => "Подписка на {$tarif->title}",
+                    'quantity' => 1.00,
+                    'price' =>  (string)number_format( $tarif->price->value(), 2, '.', ' ' ),
+                    'vatType' => "None",
+                    'paymentSubject' => "Commodity",
+                    'paymentMethod' => "FullPrepayment",
+                    ]
+                ]
                 // 'items' => [
+                //  [
                 //     'description' => "Подписка на {$tarif->title}",
                 //     'quantity' => "1.00",
                 //     'amount' => [
@@ -398,7 +412,8 @@ class BotWebhookHandler
                 //         'currency' => 'RUB'    
                 //     ],
                 //     'vat_code' => 1
-                // ]    
+                // ] 
+                // ]
             ]
         ];
     }
