@@ -386,40 +386,38 @@ class BotWebhookHandler
     {
         return [
             'receipt' => [
-                'invoice' => [
-                    'description' => 'Оплата через Telegram бота',
-                    'orderNo' => "12345"
-                ],
-                'client' => [
-                      'email'=> 'and1334@mail.ru'  
-                ],
+                // 'invoice' => [
+                //     'description' => 'Оплата через Telegram бота',
+                //     'orderNo' => "12345"
+                // ],
+                // 'client' => [
+                //       'email'=> 'and1334@mail.ru'  
+                // ],
+                // 'items' => [
+                //     [
+                //     'name' => "Подписка на {$tarif->title}",
+                //     'quantity' => 1.00,
+                //     'price' =>  (string)number_format( $tarif->price->value(), 2, '.', ' ' ),
+                //     'vatType' => "None",
+                //     'paymentSubject' => "Commodity",
+                //     'paymentMethod' => "FullPrepayment",
+                //     ]
+                // ],
                 'items' => [
                     [
-                    'name' => "Подписка на {$tarif->title}",
-                    'quantity' => 1.00,
-                    'price' =>  (string)number_format( $tarif->price->value(), 2, '.', ' ' ),
-                    'vatType' => "None",
-                    'paymentSubject' => "Commodity",
-                    'paymentMethod' => "FullPrepayment",
-                    ]
+                        'description' => "Подписка на {$tarif->title}",
+                        'quantity' => "1.00",
+                        'amount' => [
+                            'value' => (string)number_format( $tarif->price->value(), 2, '.', ' ' ),
+                            'currency' => 'RUB'    
+                        ],
+                        'vat_code' => 1
+                    ] 
                 ]
-                // 'items' => [
-                //  [
-                //     'description' => "Подписка на {$tarif->title}",
-                //     'quantity' => "1.00",
-                //     'amount' => [
-                //         'value' => (string)number_format( $tarif->price->value(), 2, '.', ' ' ),
-                //         'currency' => 'RUB'    
-                //     ],
-                //     'vat_code' => 1
-                // ] 
-                // ]
             ]
         ];
     }
 
-
-    // еуые
 
 
     private function handleCommand(Stringable $text): void
