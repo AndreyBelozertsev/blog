@@ -3,12 +3,27 @@
 namespace App\Http\Controllers;
 
 
+
+use Carbon\Carbon;
+use App\Jobs\EndSubscriptionJob;
+use Domain\Client\Models\Client;
 use App\Http\Requests\ConsultationFormRequest;
 use Services\Telegraph\Facade\TelegraphCustom;
 
 class HomeController extends Controller
 {
     public function index(){
+
+        $date = Carbon::today()->addDays(-1)->toDateString();
+        $clients = Client::with('subscriptions')->whereHas('subscriptions', function($q) use($date) {
+            $q->active()
+            ->whereDate('expaire_at', $date);
+        })->get();  
+      
+        $clients->each(function($item, $key){
+            $item->notify(new \App\Notifications\EndSubscription("Ваша подписка окончена.\nОтправится в новое путешествие:"));
+            EndSubscriptionJob::dispatch($item);
+        });
         return view('page.home');
     }
 
@@ -19,9 +34,4 @@ class HomeController extends Controller
         return response()->json(['success'=>'Спасибо!</br>В ближайшее время мы свяжемся с вами'],200);
     }
 
-    public function banMember()
-    {
-        TelegraphCustom::banChannelMember( -1001570080663, 259548170)->send();
-        TelegraphCustom::unbanChannelMember( -1001570080663, 259548170)->send();
-    }
 }

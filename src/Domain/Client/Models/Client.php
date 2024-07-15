@@ -3,16 +3,17 @@
 namespace Domain\Client\Models;
 
 use Domain\Order\Models\Order;
-use Domain\Order\Models\PaymentRegistry;
 use Illuminate\Database\Eloquent\Model;
+use Domain\Order\Models\PaymentRegistry;
 use Domain\Telegram\Models\Subscription;
+use Illuminate\Notifications\Notifiable;
 use Services\Telegraph\Models\TelegraphChat;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Client extends Model
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
 
     protected $fillable = [
@@ -24,6 +25,7 @@ class Client extends Model
         'phone',
         'source',
         'name',
+        'status',
         'telegraph_chat_id',
     ];
 
