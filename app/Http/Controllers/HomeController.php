@@ -2,13 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
-
-use Carbon\Carbon;
-use App\Jobs\EndSubscriptionJob;
-use Domain\Client\Models\Client;
 use App\Http\Requests\ConsultationFormRequest;
-use Services\Telegraph\Facade\TelegraphCustom;
 
 class HomeController extends Controller
 {
