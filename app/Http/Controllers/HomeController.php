@@ -14,16 +14,6 @@ class HomeController extends Controller
 {
     public function index(){
 
-        $date = Carbon::today()->addDays(-1)->toDateString();
-        $clients = Client::with('subscriptions')->whereHas('subscriptions', function($q) use($date) {
-            $q->active()
-            ->whereDate('expaire_at', $date);
-        })->get();  
-      
-        $clients->each(function($item, $key){
-            $item->notify(new \App\Notifications\EndSubscription("Ваша подписка окончена.\nОтправится в новое путешествие:"));
-            EndSubscriptionJob::dispatch($item);
-        });
         return view('page.home');
     }
 
