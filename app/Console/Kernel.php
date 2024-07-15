@@ -17,6 +17,10 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
 
+        $schedule->command('queue:work --stop-when-empty')
+            ->everyMinute()
+            ->withoutOverlapping();
+
         $schedule->call(function () {
             EndSubscriptionNotificationJob::dispatch(
                 "Ваша подписка заканчивается через 5 дней. Продолжить свое путешествие в мир океанов вы сможете продлив доступ.\nНажмите на кнопку для продления:", 
