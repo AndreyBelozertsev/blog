@@ -597,13 +597,13 @@
                                     <div class="lg:col-span-1 lg:row-span-2 flex flex-col justify-center items-center">
                                         <div class="text-opacity-50 h-32 lg:h-40 2xl:h-40 3xl:h-40 w-32 lg:w-40 2xl:w-40 3xl:w-40 border border-white rounded-full flex justify-center items-center " style="background:radial-gradient(circle at 50% 50%, rgba(23, 61, 73, 1), rgba(23, 61, 73, .4)); box-shadow:0 0 40px 40px rgba(23, 61, 73, .4);">
                                             <div>
-                                                <p class="text-lg md:text-2xl  3xl:text-3xl text-center pb-2">290 <span class="text-xl">руб.</span></p>
+                                                <p class="text-lg md:text-2xl  3xl:text-3xl text-center pb-2">300 <span class="text-xl">руб.</span></p>
                                                 <p class="text-sm md:text-base text-center font-thin px-4">стоимость<br>подписки</p>
                                             </div>
                                         </div>
                                     </div> 
                                     <div class="lg:col-span-3 xl:col-span-5 2xl:col-span-3  lg:col-start-2 xl:col-start-1 2xl:col-start-2">
-                                        <a class="block ff-Montserrat text-center text-center text-xs xs:text-sm lg:text-lg py-4 md:py-6 px-3 md:px-4 bg-accent leading-none justify-between" href="https://getcourse.ru/"><span class="pr-2 sm:pr-4">Получить видеоруководство</span>
+                                        <a class="block ff-Montserrat text-center text-center text-xs xs:text-sm lg:text-lg py-4 md:py-6 px-3 md:px-4 bg-accent leading-none justify-between" href="https://t.me/PapazzhukBot"><span class="pr-2 sm:pr-4">Перейти в канал</span>
                                             <svg class="inline" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M15.9687 11.1881L15.9687 4.03116L12.3349 7.68389C13.6616 6.35013 15.9389 7.27978 15.9533 9.16098L15.9687 11.1881Z" fill="white"/>
                                                 <path d="M15.9687 4.03116H11.1974H8.81176L10.827 4.03845C12.7252 4.04532 13.6736 6.33819 12.3349 7.68389L15.9687 4.03116Z" fill="white"/>
