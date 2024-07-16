@@ -445,8 +445,8 @@
                                 <span class="text-red-600 text-sm feedback-error" id="phone-error"></span>
                             </div>
                             <div class="pb-6">
-                                <textarea name="message" class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" name="" id="" rows="2" placeholder="Комментарий"></textarea>
-                                <span class="text-red-600 text-sm feedback-error" id="message-error"></span>
+                                <textarea name="comment" class="w-full pb-4 pt-2 bg-transparent border-b placeholder:opacity-50 ff-Montserrat focus:outline-none" rows="2" placeholder="Комментарий"></textarea>
+                                <span class="text-red-600 text-sm feedback-error" id="comment-error"></span>
                             </div>  
                             <div class="pb-12">
                                 <label class="ff-Montserrat focus:outline-none">

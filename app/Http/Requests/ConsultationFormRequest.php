@@ -16,7 +16,7 @@ class ConsultationFormRequest extends FormRequest
         return [
             'name' => ['required','min:3'],
             'phone' => ['required','digits_between:11,13'],
-            'message' => ['sometimes','string','nullable'],
+            'comment' => ['sometimes','string','nullable'],
             'agree' => ['required'],
         ];
     }
