@@ -267,7 +267,7 @@ class BotWebhookHandler
     public function expire(): void
     {
         if($subscription = Subscription::activeItemByClientId($this->chat->client->id)->first()){
-            $this->chat->message('Ваша подписка оканчивается: ' . getHumanDate($subscription->expaire_at))->send();
+            $this->chat->message('Ваша подписка заканчивается: ' . getHumanDate($subscription->expaire_at))->send();
         }
         else{ 
             $this->chat->message('У вас нет активной подписки')->send();

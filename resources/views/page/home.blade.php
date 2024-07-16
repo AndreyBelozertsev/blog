@@ -619,7 +619,7 @@
             </div>
         </section>
         <section class="ankor pb-20 md:pb-36" id="shop"></section>
-        <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
+        <!-- <section class="pb-20 md:pb-36" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
             <div class="container">
                 <div class="md:grid grid-cols-5 pb-16 md:pb-24">
                     <div class="col-span-4 col-start-2">
@@ -695,7 +695,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="flex justify-center ff-Montserrat">
+                <div class="flex justify-center ff-Montserrat">
                     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
                         <div class="flex justify-between flex-1 sm:hidden">
                 
@@ -751,10 +751,7 @@
                             </div>
                         </div>
                     </nav>
-                </div> -->
-                
-
-<!-- 
+                </div> 
                 <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
                     <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
                         <li class="mr-2" role="presentation">
@@ -784,13 +781,8 @@
                     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
                         <p class="text-sm text-gray-500 dark:text-gray-400">4This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
                     </div>
-                </div> -->
-
-
-
-
-
+                </div>
             </div>
-        </section>
+        </section> -->
     </main>
 @endsection

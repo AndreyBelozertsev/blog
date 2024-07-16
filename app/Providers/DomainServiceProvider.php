@@ -8,6 +8,7 @@ use Domain\Page\Providers\PageServiceProvider;
 use Domain\Order\Providers\OrderServiceProvider;
 use Services\Telegraph\TelegraphServiceProvider;
 use Domain\Client\Providers\ClientServiceProvider;
+use Domain\Customer\Providers\CustomerServiceProvider;
 use Domain\Telegram\Providers\TelegramServiceProvider;
 
 
@@ -23,6 +24,10 @@ class DomainServiceProvider extends ServiceProvider
 
         $this->app->register(
             ClientServiceProvider::class
+        );
+
+        $this->app->register(
+            CustomerServiceProvider::class
         );
 
         $this->app->register(

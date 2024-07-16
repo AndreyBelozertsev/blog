@@ -1,7 +1,8 @@
 <?php
-namespace App\Contracts;
+namespace Domain\Customer\Contracts;
 
-use App\DTO\NewCustomerDTO;
+use Domain\Customer\DTOs\NewCustomerDTO;
+
 
 interface NewCustomerContract
 {

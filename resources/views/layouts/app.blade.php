@@ -38,16 +38,16 @@
 						<p class="text-base lg:text-base xl:text-lg 3xl:text-2xl uppercase pb-12">Александр Жук</p>
 						<div class="opacity-50 ff-Montserrat text-xs">
 							<p><a href="#">Политика конфидициальности</a></p>
-							<p>Copyright ©2023</p>
+							<p>Copyright ©{{ date('Y') }}</p>
 						</div>
 					</div>
-					<div class="py-8">
+					<!-- <div class="py-8">
 						<p class="uppercase pb-8 font-medium">Магазин</p>
 						<div class="opacity-50">
 							<p class="pb-4"><a href="#">Для детей</a></p>
 							<p class="pb-4"><a href="#">Для всех</a></p>
 						</div>
-					</div>
+					</div> -->
 					<div class="py-8 ">
 						<p class="uppercase pb-8 font-medium">Информация</p>
 						<div class="opacity-50">
@@ -55,7 +55,6 @@
 							<p class="pb-4"><a href="#">Как стать моряком</a></p>
 							<p class="pb-4"><a href="#">Как стать блогером</a></p>
 							<p class="pb-4"><a href="#">Telegram - канал</a></p>
-							<p class="pb-4"><a href="#">Магазин</a></p>
 						</div>
 					</div>
 				</div>
@@ -76,17 +75,17 @@
 				</div>
 				<div>
 					<div><p class="font-medium pb-3">Дизайн</p></div>
-					<p class="pb-4 opacity-50"><a href="#">Дарья Акименко</a></p>
+					<p class="pb-4 opacity-50"><a href="https://t.me/akimenko_wd">Дарья Акименко</a></p>
 				</div>
 				<div>
 					<div><p class="font-medium pb-3">Разработка</p> </div>
-					<p class="pb-4 opacity-50"><a href="#">компания "Ракурс"</a></p>
+					<p class="pb-4 opacity-50"><a href="https://rakurs3d.ru">компания «Ракурс»</a></p>
 				</div>
 			</div>
 			<div class="md:hidden py-8">
 				<div class="opacity-50 ff-Montserrat text-xs">
 					<p><a href="#">Политика конфидициальности</a></p>
-					<p>Copyright ©2023</p>
+					<p>Copyright ©{{ date('Y') }}</p>
 				</div>
 			</div>
 		</div>

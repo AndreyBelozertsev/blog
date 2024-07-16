@@ -1,6 +1,7 @@
 <?php
-namespace App\DTO;
+namespace Domain\Customer\DTOs;
 
+use Illuminate\Http\Request;
 
 class NewCustomerDTO
 {
