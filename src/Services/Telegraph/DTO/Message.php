@@ -12,6 +12,7 @@ use Illuminate\Support\Carbon;
 use DefStudio\Telegraph\DTO\Chat;
 use DefStudio\Telegraph\DTO\User;
 use DefStudio\Telegraph\DTO\Audio;
+use DefStudio\Telegraph\DTO\Photo;
 use DefStudio\Telegraph\DTO\Video;
 use DefStudio\Telegraph\DTO\Voice;
 use Illuminate\Support\Collection;
